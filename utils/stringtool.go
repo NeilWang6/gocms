@@ -57,7 +57,7 @@ func GetRandomString(length int, number bool) string {
 }
 
 func GetTimeRange(class string) (timeRange string) {
-	classNum := strings.TrimLeft(class, "Class")
+	classNum := strings.TrimLeft(class, "class")
 	classNumInt, _ := strconv.Atoi(classNum)
 	classNumInt = classNumInt / 10
 	if classNumInt > 0 && classNumInt <= 7 {
@@ -83,7 +83,7 @@ func GetTimeRange(class string) (timeRange string) {
 }
 
 func GetDateByClass(class string) (date string) {
-	classNum := strings.TrimLeft(class, "Class")
+	classNum := strings.TrimLeft(class, "class")
 	classNumInt, _ := strconv.Atoi(classNum)
 	classNumInt = classNumInt / 10
 	if classNumInt%7 == 0 {
