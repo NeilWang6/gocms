@@ -1,0 +1,336 @@
+  <!-- 验证插件 -->
+<script src="/static/plugins/jquery-validation/jquery.validate.min.js"></script>
+<script src="/static/plugins/jquery-validation/localization/messages_zh.min.js"></script>
+<!-- 针对当前主题进行简单封装，精简代码 -->
+<script src="/static/sdtheme/scripts/sdvalidate.js"></script>
+<script src="/static/product/scripts/common.js"></script>
+<script>
+    var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+    $(function () {
+        //验证
+        validateInfo();
+        //studentSelectInit();
+        //lengthSelectInit ('{{.length}}');
+    });
+    //表单验证及AJAX提交
+    function validateInfo() {
+        var $thisForm = $('#thisForm');
+        $thisForm.sdvalidate({
+            rules: {
+                Name: {
+                    maxlength: 32,
+                    required: true
+                }
+            },
+            messages: {},
+            submitHandler: function (form) {
+                var url ='{{ urlfor "Teacher/TeacherSubjectController.Edit"}}';
+                var data = $thisForm.serialize();
+                $.sdpost(url,data,function(re){
+                    if(re.code === 0){
+                        parent.layer.msg(re.msg);
+                        parent.refresh(re.obj);
+                        parent.layer.close(index);
+                    }else{
+                        parent.layer.alert(re.msg,{icon:2,title:'失败'})
+                    }
+                });
+                return false;
+            }
+        });
+    }
+
+    function FormSubmit() {
+        $("#thisForm").submit();
+    }
+
+    function studentSelectInit(ths, selecteds) {
+        console.log(selecteds);
+        var url = '{{urlfor "Student/StudentController.DataList"}}';
+        var $select = $(ths);
+        $select.html('');
+        $.sdpost(url,{"Status":"1"},function (re) {
+            if(re.code === 0) {
+                var html=['<option value="">   </option>'];
+                $(re.obj).each(function(i,e){
+                    html.push('<option value="' + e.id + '">' + e.name + '</option>')
+                });
+                $select.html(html.join(''));
+                $select.selectpicker({liveSearch:true});
+                $select.selectpicker('val',selecteds);
+            }else {
+                layer.alert("获取数据失败",{icon:2,title:'失败'})
+            }
+        })
+    }
+    function lengthSelectInit(thi, selecteds) {
+        selecteds = selecteds.toString();
+        var $select = $(thi);
+        $select.html('');
+        var obj = lengthMap;
+        var html=['<option value=""> </option>'];
+        $(obj).each(function(i,e){
+            html.push('<option value="' + e + '">' + e + '</option>')
+        });
+        $select.html(html.join(''));
+        $select.selectpicker({liveSearch:true});
+        $select.selectpicker('val',selecteds.split(','));
+    }
+    function edit(thi,id,type) {
+        var curTr = $(thi).closest("tr");
+        console.log(curTr);
+        //console.log(curTr.find(" input[ name='Length' ] ").val());
+        var data = {};
+        data['SchoolId'] = curTr.find(" input[ name='SchoolId' ] ").val();
+        data['Length'] = curTr.find(" input[ name='Length' ] ").val();
+        data['Grade1'] = curTr.find(" input[ name='Grade1' ] ").val();
+        data['Grade2'] = curTr.find(" input[ name='Grade2' ] ").val();
+        data['Grade3'] = curTr.find(" input[ name='Grade3' ] ").val();
+        data['Grade10'] = curTr.find(" input[ name='Grade10' ] ").val();
+        data['Grade20'] = curTr.find(" input[ name='Grade20' ] ").val();
+        data['Grade30'] = curTr.find(" input[ name='Grade30' ] ").val();
+        data['Grade40'] = curTr.find(" input[ name='Grade40' ] ").val();
+        data['Grade50'] = curTr.find(" input[ name='Grade50' ] ").val();
+        data['Grade60'] = curTr.find(" input[ name='Grade60' ] ").val();
+        data['Grade70'] = curTr.find(" input[ name='Grade70' ] ").val();
+        data['Grade80'] = curTr.find(" input[ name='Grade80' ] ").val();
+        data['Grade90'] = curTr.find(" input[ name='Grade90' ] ").val();
+        data['Grade100'] = curTr.find(" input[ name='Grade100' ] ").val();
+        data['Grade110'] = curTr.find(" input[ name='Grade110' ] ").val();
+        data['Grade120'] = curTr.find(" input[ name='Grade120' ] ").val();
+        data['Status1'] = curTr.find(" select[ name='Status1' ] ").val();
+        data['Status2'] = curTr.find(" select[ name='Status2' ] ").val();
+        data['Status3'] = curTr.find(" select[ name='Status3' ] ").val();
+        data['Status10'] = curTr.find(" select[ name='Status10' ] ").val();
+        data['Status20'] = curTr.find(" select[ name='Status20' ] ").val();
+        data['Status30'] = curTr.find(" select[ name='Status30' ] ").val();
+        data['Status40'] = curTr.find(" select[ name='Status40' ] ").val();
+        data['Status50'] = curTr.find(" select[ name='Status50' ] ").val();
+        data['Status60'] = curTr.find(" select[ name='Status60' ] ").val();
+        data['Status70'] = curTr.find(" select[ name='Status70' ] ").val();
+        data['Status80'] = curTr.find(" select[ name='Status80' ] ").val();
+        data['Status90'] = curTr.find(" select[ name='Status90' ] ").val();
+        data['Status100'] = curTr.find(" select[ name='Status100' ] ").val();
+        data['Status110'] = curTr.find(" select[ name='Status110' ] ").val();
+        data['Status120'] = curTr.find(" select[ name='Status120' ] ").val();
+        data['Type'] = type;
+        data['Id'] = id;
+
+        if (data['Length'] == "") {
+            parent.layer.msg('时长范围不能为空');return false;
+        }
+        if (data['Type'] === "") {
+            parent.layer.msg('类型不能为空');return false;
+        }
+        if (data['Grade1'] <= 0) {
+            parent.layer.msg('幼小单价不能为空');return false;
+        } if (data['Grade2'] <= 0) {
+            parent.layer.msg('幼中单价不能为空');return false;
+        } if (data['Grade3'] <= 0) {
+            parent.layer.msg('幼大单价不能为空');return false;
+        } if (data['Grade10'] <= 0) {
+            parent.layer.msg('一年级单价不能为空');return false;
+        } if (data['Grade20'] <= 0) {
+            parent.layer.msg('二年级单价不能为空');return false;
+        } if (data['Grade30'] <= 0) {
+            parent.layer.msg('三年级单价不能为空');return false;
+        } if (data['Grade40'] <= 0) {
+            parent.layer.msg('四年级单价不能为空');return false;
+        } if (data['Grade50'] <= 0) {
+            parent.layer.msg('五年级单价不能为空');return false;
+        } if (data['Grade60'] <= 0) {
+            parent.layer.msg('六年级单价不能为空');return false;
+        } if (data['Grade70'] <= 0) {
+            parent.layer.msg('初一单价不能为空');return false;
+        } if (data['Grade80'] <= 0) {
+            parent.layer.msg('初二单价不能为空');return false;
+        } if (data['Grade90'] <= 0) {
+            parent.layer.msg('初三单价不能为空');return false;
+        } if (data['Grade100'] <= 0) {
+            parent.layer.msg('高一单价不能为空');return false;
+        } if (data['Grade110'] <= 0) {
+            parent.layer.msg('高二单价不能为空');return false;
+        } if (data['Grade120'] <= 0) {
+            parent.layer.msg('高三单价不能为空');return false;
+        }
+        var url ='{{ urlfor "Student/ContractPriceController.Edit"}}';
+        $.sdpost(url,data,function(re){
+            if(re.code === 0){
+                parent.layer.msg(re.msg);
+                // parent.refresh(re.obj);
+                // parent.layer.close(index);
+            }else{
+                parent.layer.alert(re.msg,{icon:2,title:'失败'})
+            }
+        });
+        return false;
+    }
+    // 新增一列
+    function addLine() {
+        var tr = '<tr class="price-line">\n' +
+                '                    <td>\n' +
+                '                        <div class="">\n' +
+                '                            <div class="form-group">\n' +
+                '                                <input type="text" class="form-control" name="Length" placeholder="-">\n' +
+                '                                <button type="button" class="btn btn-info pull-left" onclick="edit(this,0,0)">确认</button>\n' +
+                '                            </div>\n' +
+                '                        </div>\n' +
+                '                    </td>\n' +
+                '\n' +
+                '                    <td>\n' +
+                '                        <div class="">\n' +
+                '                            <div class="form-group">\n' +
+                '                                <input type="text" name="Grade1" class="form-control">\n' +
+                '                                <select class="form-control lock-state" name="Status1" >\n' +
+                '                                    <option value=""></option>\n' +
+                '                                </select>\n' +
+                '                                </select>\n' +
+                '                            </div>\n' +
+                '                        </div>\n' +
+                '                    </td><td>\n' +
+                '                    <div class="">\n' +
+                '                        <div class="form-group">\n' +
+                '                            <input type="text" name="Grade2" class="form-control">\n' +
+                '                            <select class="form-control lock-state" name="Status2" >\n' +
+                '                                <option value=""></option>\n' +
+                '                            </select>\n' +
+                '                            </select>\n' +
+                '                        </div>\n' +
+                '                    </div>\n' +
+                '                </td><td>\n' +
+                '                    <div class="">\n' +
+                '                        <div class="form-group">\n' +
+                '                            <input type="text" name="Grade3" class="form-control">\n' +
+                '                            <select class="form-control lock-state" name="Status3" >\n' +
+                '                                <option value=""></option>\n' +
+                '                            </select>\n' +
+                '                            </select>\n' +
+                '                        </div>\n' +
+                '                    </div>\n' +
+                '                </td><td>\n' +
+                '                    <div class="">\n' +
+                '                        <div class="form-group">\n' +
+                '                            <input type="text" name="Grade10" class="form-control">\n' +
+                '                            <select class="form-control lock-state" name="Status10" >\n' +
+                '                                <option value=""></option>\n' +
+                '                            </select>\n' +
+                '                            </select>\n' +
+                '                        </div>\n' +
+                '                    </div>\n' +
+                '                </td><td>\n' +
+                '                    <div class="">\n' +
+                '                        <div class="form-group">\n' +
+                '                            <input type="text" name="Grade20" class="form-control">\n' +
+                '                            <select class="form-control lock-state" name="Status20" >\n' +
+                '                                <option value=""></option>\n' +
+                '                            </select>\n' +
+                '                            </select>\n' +
+                '                        </div>\n' +
+                '                    </div>\n' +
+                '                </td><td>\n' +
+                '                    <div class="">\n' +
+                '                        <div class="form-group">\n' +
+                '                            <input type="text" name="Grade30" class="form-control">\n' +
+                '                            <select class="form-control lock-state" name="Status30" >\n' +
+                '                                <option value=""></option>\n' +
+                '                            </select>\n' +
+                '                            </select>\n' +
+                '                        </div>\n' +
+                '                    </div>\n' +
+                '                </td><td>\n' +
+                '                    <div class="">\n' +
+                '                        <div class="form-group">\n' +
+                '                            <input type="text" name="Grade40" class="form-control">\n' +
+                '                            <select class="form-control lock-state" name="Status40" >\n' +
+                '                                <option value=""></option>\n' +
+                '                            </select>\n' +
+                '                            </select>\n' +
+                '                        </div>\n' +
+                '                    </div>\n' +
+                '                </td><td>\n' +
+                '                    <div class="">\n' +
+                '                        <div class="form-group">\n' +
+                '                            <input type="text" name="Grade50" class="form-control">\n' +
+                '                            <select class="form-control lock-state" name="Status50" >\n' +
+                '                                <option value=""></option>\n' +
+                '                            </select>\n' +
+                '                            </select>\n' +
+                '                        </div>\n' +
+                '                    </div>\n' +
+                '                </td><td>\n' +
+                '                    <div class="">\n' +
+                '                        <div class="form-group">\n' +
+                '                            <input type="text" name="Grade60" class="form-control">\n' +
+                '                            <select class="form-control lock-state" name="Status60" >\n' +
+                '                                <option value=""></option>\n' +
+                '                            </select>\n' +
+                '                            </select>\n' +
+                '                        </div>\n' +
+                '                    </div>\n' +
+                '                </td><td>\n' +
+                '                    <div class="">\n' +
+                '                        <div class="form-group">\n' +
+                '                            <input type="text" name="Grade70" class="form-control">\n' +
+                '                            <select class="form-control lock-state" name="Status70" >\n' +
+                '                                <option value=""></option>\n' +
+                '                            </select>\n' +
+                '                            </select>\n' +
+                '                        </div>\n' +
+                '                    </div>\n' +
+                '                </td><td>\n' +
+                '                    <div class="">\n' +
+                '                        <div class="form-group">\n' +
+                '                            <input type="text" name="Grade80" class="form-control">\n' +
+                '                            <select class="form-control lock-state" name="Status80" >\n' +
+                '                                <option value=""></option>\n' +
+                '                            </select>\n' +
+                '                            </select>\n' +
+                '                        </div>\n' +
+                '                    </div>\n' +
+                '                </td><td>\n' +
+                '                    <div class="">\n' +
+                '                        <div class="form-group">\n' +
+                '                            <input type="text" name="Grade90" class="form-control">\n' +
+                '                            <select class="form-control lock-state" name="Status90" >\n' +
+                '                                <option value=""></option>\n' +
+                '                            </select>\n' +
+                '                            </select>\n' +
+                '                        </div>\n' +
+                '                    </div>\n' +
+                '                </td><td>\n' +
+                '                    <div class="">\n' +
+                '                        <div class="form-group">\n' +
+                '                            <input type="text" name="Grade100" class="form-control">\n' +
+                '                            <select class="form-control lock-state" name="Status100" >\n' +
+                '                                <option value=""></option>\n' +
+                '                            </select>\n' +
+                '                            </select>\n' +
+                '                        </div>\n' +
+                '                    </div>\n' +
+                '                </td><td>\n' +
+                '                    <div class="">\n' +
+                '                        <div class="form-group">\n' +
+                '                            <input type="text" name="Grade110" class="form-control">\n' +
+                '                            <select class="form-control lock-state" name="Status110" >\n' +
+                '                                <option value=""></option>\n' +
+                '                            </select>\n' +
+                '                            </select>\n' +
+                '                        </div>\n' +
+                '                    </div>\n' +
+                '                </td><td>\n' +
+                '                    <div class="">\n' +
+                '                        <div class="form-group">\n' +
+                '                            <input type="text" name="Grade120" class="form-control">\n' +
+                '                            <select class="form-control lock-state" name="Status120" >\n' +
+                '                                <option value=""></option>\n' +
+                '                            </select>\n' +
+                '                            </select>\n' +
+                '                        </div>\n' +
+                '                    </div>\n' +
+                '                </td>\n' +
+                '\n' +
+                '\n' +
+                '                </tr>';
+        $(".price-table").append(tr);
+    }
+</script>

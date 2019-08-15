@@ -1,0 +1,14 @@
+<div class="row">
+    <!-- form start -->
+    <form class="form-horizontal" id="thisForm">
+        <input type="hidden" Name="TeacherId" id="Id" value="{{.TeacherId}}">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">添加科目</label>
+            <div class="col-sm-8">
+                <select name="SubjectId[]" id="Subject" class="form-control" multiple>
+                </select>
+                {{/*<input type="text" name="Subject" class="form-control" placeholder="科目名称" value="{{.m.subjectIds}}">*/}}
+            </div>
+        </div>
+    </form>
+</div>

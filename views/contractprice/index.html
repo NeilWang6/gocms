@@ -1,0 +1,443 @@
+<div>
+    {{range .schools}}
+    <div class="col-md-12">{{.Name}}</div>
+    <div class="col-md-12">
+        <div class="box">
+            <form id="thisForm">
+                <div class="box-header">
+                    <h3 class="box-title">一对一合同</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body no-padding">
+                    <table class="table table-condensed">
+                        <tbody class="price-table">
+                        <tr>
+                            <th>时长</th>
+                            <th>幼小</th>
+                            <th>幼中</th>
+                            <th>幼大</th>
+                            <th>一年级</th>
+                            <th>二年级</th>
+                            <th>三年级</th>
+                            <th>四年级</th>
+                            <th>五年级</th>
+                            <th>六年级</th>
+                            <th>初一</th>
+                            <th>初二</th>
+                            <th>初三</th>
+                            <th>高一</th>
+                            <th>高二</th>
+                            <th>高三</th>
+                        </tr>
+                        {{range .Myi}}
+                        <tr class="price-line">
+                            <td style="width: 8%;">
+                                <div class="">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="Length" placeholder="-" value="{{.Lower}}-{{.Upper}}">
+                                        <input type="hidden" name="SchoolId" value="{{.SchoolId}}">
+                                        <button type="button" class="btn btn-info form-control pull-left" onclick="edit(this,{{.Id}},0)">确认</button>
+                                    </div>
+                                </div>
+                            </td>
+
+
+
+                            <td>
+                                <div class="">
+                                    <div class="form-group">
+                                        <input type="text" name="Grade1" class="form-control" value="{{.Grade1}}">
+                                        <select class="form-control lock-state" name="Status1" >
+                                            <option {{if eq .Status1 0}}selected{{end}} value="0">不</option>
+                                            <option {{if eq .Status1 1}}selected{{end}} value="1">锁</option>
+                                        </select>
+                                        </select>
+                                    </div>
+                                </div>
+                            </td> <td>
+                            <div class="">
+                                <div class="form-group">
+                                    <input type="text" name="Grade2" class="form-control" value="{{.Grade2}}">
+                                    <select class="form-control lock-state" name="Status2" >
+                                        <option {{if eq .Status2 0}}selected{{end}} value="0">不</option>
+                                        <option {{if eq .Status2 1}}selected{{end}} value="1">锁</option>
+                                    </select>
+                                    </select>
+                                </div>
+                            </div>
+                        </td> <td>
+                            <div class="">
+                                <div class="form-group">
+                                    <input type="text" name="Grade3" class="form-control" value="{{.Grade3}}">
+                                    <select class="form-control lock-state" name="Status3" >
+                                        <option {{if eq .Status3 0}}selected{{end}} value="0">不</option>
+                                        <option {{if eq .Status3 1}}selected{{end}} value="1">锁</option>
+                                    </select>
+                                    </select>
+                                </div>
+                            </div>
+                        </td> <td>
+                            <div class="">
+                                <div class="form-group">
+                                    <input type="text" name="Grade10" class="form-control" value="{{.Grade10}}">
+                                    <select class="form-control lock-state" name="Status10" >
+                                        <option {{if eq .Status10 0}}selected{{end}} value="0">不</option>
+                                        <option {{if eq .Status10 1}}selected{{end}} value="1">锁</option>
+                                    </select>
+                                    </select>
+                                </div>
+                            </div>
+                        </td> <td>
+                            <div class="">
+                                <div class="form-group">
+                                    <input type="text" name="Grade20" class="form-control" value="{{.Grade20}}">
+                                    <select class="form-control lock-state" name="Status20" >
+                                        <option {{if eq .Status20 0}}selected{{end}} value="0">不</option>
+                                        <option {{if eq .Status20 1}}selected{{end}} value="1">锁</option>
+                                    </select>
+                                    </select>
+                                </div>
+                            </div>
+                        </td> <td>
+                            <div class="">
+                                <div class="form-group">
+                                    <input type="text" name="Grade30" class="form-control" value="{{.Grade30}}">
+                                    <select class="form-control lock-state" name="Status30" >
+                                        <option {{if eq .Status30 0}}selected{{end}} value="0">不</option>
+                                        <option {{if eq .Status30 1}}selected{{end}} value="1">锁</option>
+                                    </select>
+                                    </select>
+                                </div>
+                            </div>
+                        </td> <td>
+                            <div class="">
+                                <div class="form-group">
+                                    <input type="text" name="Grade40" class="form-control" value="{{.Grade40}}">
+                                    <select class="form-control lock-state" name="Status40" >
+                                        <option {{if eq .Status40 0}}selected{{end}} value="0">不</option>
+                                        <option {{if eq .Status40 1}}selected{{end}} value="1">锁</option>
+                                    </select>
+                                    </select>
+                                </div>
+                            </div>
+                        </td> <td>
+                            <div class="">
+                                <div class="form-group">
+                                    <input type="text" name="Grade50" class="form-control" value="{{.Grade50}}">
+                                    <select class="form-control lock-state" name="Status50" >
+                                        <option {{if eq .Status50 0}}selected{{end}} value="0">不</option>
+                                        <option {{if eq .Status50 1}}selected{{end}} value="1">锁</option>
+                                    </select>
+                                    </select>
+                                </div>
+                            </div>
+                        </td> <td>
+                            <div class="">
+                                <div class="form-group">
+                                    <input type="text" name="Grade60" class="form-control" value="{{.Grade60}}">
+                                    <select class="form-control lock-state" name="Status60" >
+                                        <option {{if eq .Status60 0}}selected{{end}} value="0">不</option>
+                                        <option {{if eq .Status60 1}}selected{{end}} value="1">锁</option>
+                                    </select>
+                                    </select>
+                                </div>
+                            </div>
+                        </td> <td>
+                            <div class="">
+                                <div class="form-group">
+                                    <input type="text" name="Grade70" class="form-control" value="{{.Grade70}}">
+                                    <select class="form-control lock-state" name="Status70" >
+                                        <option {{if eq .Status70 0}}selected{{end}} value="0">不</option>
+                                        <option {{if eq .Status70 1}}selected{{end}} value="1">锁</option>
+                                    </select>
+                                    </select>
+                                </div>
+                            </div>
+                        </td> <td>
+                            <div class="">
+                                <div class="form-group">
+                                    <input type="text" name="Grade80" class="form-control" value="{{.Grade80}}">
+                                    <select class="form-control lock-state" name="Status80" >
+                                        <option {{if eq .Status80 0}}selected{{end}} value="0">不</option>
+                                        <option {{if eq .Status80 1}}selected{{end}} value="1">锁</option>
+                                    </select>
+                                    </select>
+                                </div>
+                            </div>
+                        </td> <td>
+                            <div class="">
+                                <div class="form-group">
+                                    <input type="text" name="Grade90" class="form-control" value="{{.Grade90}}">
+                                    <select class="form-control lock-state" name="Status90" >
+                                        <option {{if eq .Status90 0}}selected{{end}} value="0">不</option>
+                                        <option {{if eq .Status90 1}}selected{{end}} value="1">锁</option>
+                                    </select>
+                                    </select>
+                                </div>
+                            </div>
+                        </td> <td>
+                            <div class="">
+                                <div class="form-group">
+                                    <input type="text" name="Grade100" class="form-control" value="{{.Grade100}}">
+                                    <select class="form-control lock-state" name="Status100" >
+                                        <option {{if eq .Status100 0}}selected{{end}} value="0">不</option>
+                                        <option {{if eq .Status100 1}}selected{{end}} value="1">锁</option>
+                                    </select>
+                                    </select>
+                                </div>
+                            </div>
+                        </td> <td>
+                            <div class="">
+                                <div class="form-group">
+                                    <input type="text" name="Grade110" class="form-control" value="{{.Grade110}}">
+                                    <select class="form-control lock-state" name="Status110" >
+                                        <option {{if eq .Status110 0}}selected{{end}} value="0">不</option>
+                                        <option {{if eq .Status110 1}}selected{{end}} value="1">锁</option>
+                                    </select>
+                                    </select>
+                                </div>
+                            </div>
+                        </td> <td>
+                            <div class="">
+                                <div class="form-group">
+                                    <input type="text" name="Grade120" class="form-control" value="{{.Grade120}}">
+                                    <select class="form-control lock-state" name="Status120" >
+                                        <option {{if eq .Status120 0}}selected{{end}} value="0">不</option>
+                                        <option {{if eq .Status120 1}}selected{{end}} value="1">锁</option>
+                                    </select>
+                                    </select>
+                                </div>
+                            </div>
+                        </td>
+                        </tr>
+                        {{end}}
+                        </tbody>
+                    </table>
+                {{/*<button type="button" class="btn btn-info pull-right" onclick="addLine('thisForm')">新增一列</button>*/}}
+                </div>
+                <!-- /.box-body -->
+            </form>
+        </div>
+        <!-- /.box -->
+    </div>
+    <!-- /.小班 -->
+    <div class="col-md-12">{{.Name}}</div>
+    <div class="col-md-12">
+        <div class="box">
+            <form id="thisForm">
+                <div class="box-header">
+                    <h3 class="box-title">小班合同</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body no-padding">
+                    <table class="table table-condensed">
+                        <tbody class="price-table">
+                        <tr>
+                            <th>时长</th>
+                            <th>幼小</th>
+                            <th>幼中</th>
+                            <th>幼大</th>
+                            <th>一年级</th>
+                            <th>二年级</th>
+                            <th>三年级</th>
+                            <th>四年级</th>
+                            <th>五年级</th>
+                            <th>六年级</th>
+                            <th>初一</th>
+                            <th>初二</th>
+                            <th>初三</th>
+                            <th>高一</th>
+                            <th>高二</th>
+                            <th>高三</th>
+                        </tr>
+                        {{range .Mxiao}}
+                        <tr class="price-line">
+                            <td style="width: 8%;">
+                                <div class="">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="Length" placeholder="-" value="{{.Lower}}-{{.Upper}}">
+                                        <button type="button" class="btn btn-info form-control pull-left" onclick="edit(this,{{.Id}},1)">确认</button>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="">
+                                    <div class="form-group">
+                                        <input type="text" name="Grade1" class="form-control" value="{{.Grade1}}">
+                                        <select class="form-control lock-state" name="Status1" >
+                                            <option {{if eq .Status1 0}}selected{{end}} value="0">不</option>
+                                            <option {{if eq .Status1 1}}selected{{end}} value="1">锁</option>
+                                        </select>
+                                        </select>
+                                    </div>
+                                </div>
+                            </td> <td>
+                            <div class="">
+                                <div class="form-group">
+                                    <input type="text" name="Grade2" class="form-control" value="{{.Grade2}}">
+                                    <select class="form-control lock-state" name="Status2" >
+                                        <option {{if eq .Status2 0}}selected{{end}} value="0">不</option>
+                                        <option {{if eq .Status2 1}}selected{{end}} value="1">锁</option>
+                                    </select>
+                                    </select>
+                                </div>
+                            </div>
+                        </td> <td>
+                            <div class="">
+                                <div class="form-group">
+                                    <input type="text" name="Grade3" class="form-control" value="{{.Grade3}}">
+                                    <select class="form-control lock-state" name="Status3" >
+                                        <option {{if eq .Status3 0}}selected{{end}} value="0">不</option>
+                                        <option {{if eq .Status3 1}}selected{{end}} value="1">锁</option>
+                                    </select>
+                                    </select>
+                                </div>
+                            </div>
+                        </td> <td>
+                            <div class="">
+                                <div class="form-group">
+                                    <input type="text" name="Grade10" class="form-control" value="{{.Grade10}}">
+                                    <select class="form-control lock-state" name="Status10" >
+                                        <option {{if eq .Status10 0}}selected{{end}} value="0">不</option>
+                                        <option {{if eq .Status10 1}}selected{{end}} value="1">锁</option>
+                                    </select>
+                                    </select>
+                                </div>
+                            </div>
+                        </td> <td>
+                            <div class="">
+                                <div class="form-group">
+                                    <input type="text" name="Grade20" class="form-control" value="{{.Grade20}}">
+                                    <select class="form-control lock-state" name="Status20" >
+                                        <option {{if eq .Status20 0}}selected{{end}} value="0">不</option>
+                                        <option {{if eq .Status20 1}}selected{{end}} value="1">锁</option>
+                                    </select>
+                                    </select>
+                                </div>
+                            </div>
+                        </td> <td>
+                            <div class="">
+                                <div class="form-group">
+                                    <input type="text" name="Grade30" class="form-control" value="{{.Grade30}}">
+                                    <select class="form-control lock-state" name="Status30" >
+                                        <option {{if eq .Status30 0}}selected{{end}} value="0">不</option>
+                                        <option {{if eq .Status30 1}}selected{{end}} value="1">锁</option>
+                                    </select>
+                                    </select>
+                                </div>
+                            </div>
+                        </td> <td>
+                            <div class="">
+                                <div class="form-group">
+                                    <input type="text" name="Grade40" class="form-control" value="{{.Grade40}}">
+                                    <select class="form-control lock-state" name="Status40" >
+                                        <option {{if eq .Status40 0}}selected{{end}} value="0">不</option>
+                                        <option {{if eq .Status40 1}}selected{{end}} value="1">锁</option>
+                                    </select>
+                                    </select>
+                                </div>
+                            </div>
+                        </td> <td>
+                            <div class="">
+                                <div class="form-group">
+                                    <input type="text" name="Grade50" class="form-control" value="{{.Grade50}}">
+                                    <select class="form-control lock-state" name="Status50" >
+                                        <option {{if eq .Status50 0}}selected{{end}} value="0">不</option>
+                                        <option {{if eq .Status50 1}}selected{{end}} value="1">锁</option>
+                                    </select>
+                                    </select>
+                                </div>
+                            </div>
+                        </td> <td>
+                            <div class="">
+                                <div class="form-group">
+                                    <input type="text" name="Grade60" class="form-control" value="{{.Grade60}}">
+                                    <select class="form-control lock-state" name="Status60" >
+                                        <option {{if eq .Status60 0}}selected{{end}} value="0">不</option>
+                                        <option {{if eq .Status60 1}}selected{{end}} value="1">锁</option>
+                                    </select>
+                                    </select>
+                                </div>
+                            </div>
+                        </td> <td>
+                            <div class="">
+                                <div class="form-group">
+                                    <input type="text" name="Grade70" class="form-control" value="{{.Grade70}}">
+                                    <select class="form-control lock-state" name="Status70" >
+                                        <option {{if eq .Status70 0}}selected{{end}} value="0">不</option>
+                                        <option {{if eq .Status70 1}}selected{{end}} value="1">锁</option>
+                                    </select>
+                                    </select>
+                                </div>
+                            </div>
+                        </td> <td>
+                            <div class="">
+                                <div class="form-group">
+                                    <input type="text" name="Grade80" class="form-control" value="{{.Grade80}}">
+                                    <select class="form-control lock-state" name="Status80" >
+                                        <option {{if eq .Status80 0}}selected{{end}} value="0">不</option>
+                                        <option {{if eq .Status80 1}}selected{{end}} value="1">锁</option>
+                                    </select>
+                                    </select>
+                                </div>
+                            </div>
+                        </td> <td>
+                            <div class="">
+                                <div class="form-group">
+                                    <input type="text" name="Grade90" class="form-control" value="{{.Grade90}}">
+                                    <select class="form-control lock-state" name="Status90" >
+                                        <option {{if eq .Status90 0}}selected{{end}} value="0">不</option>
+                                        <option {{if eq .Status90 1}}selected{{end}} value="1">锁</option>
+                                    </select>
+                                    </select>
+                                </div>
+                            </div>
+                        </td> <td>
+                            <div class="">
+                                <div class="form-group">
+                                    <input type="text" name="Grade100" class="form-control" value="{{.Grade100}}">
+                                    <select class="form-control lock-state" name="Status100" >
+                                        <option {{if eq .Status100 0}}selected{{end}} value="0">不</option>
+                                        <option {{if eq .Status100 1}}selected{{end}} value="1">锁</option>
+                                    </select>
+                                    </select>
+                                </div>
+                            </div>
+                        </td> <td>
+                            <div class="">
+                                <div class="form-group">
+                                    <input type="text" name="Grade110" class="form-control" value="{{.Grade110}}">
+                                    <select class="form-control lock-state" name="Status110" >
+                                        <option {{if eq .Status110 0}}selected{{end}} value="0">不</option>
+                                        <option {{if eq .Status110 1}}selected{{end}} value="1">锁</option>
+                                    </select>
+                                    </select>
+                                </div>
+                            </div>
+                        </td> <td>
+                            <div class="">
+                                <div class="form-group">
+                                    <input type="text" name="Grade120" class="form-control" value="{{.Grade120}}">
+                                    <select class="form-control lock-state" name="Status120" >
+                                        <option {{if eq .Status120 0}}selected{{end}} value="0">不</option>
+                                        <option {{if eq .Status120 1}}selected{{end}} value="1">锁</option>
+                                    </select>
+                                    </select>
+                                </div>
+                            </div>
+                        </td>
+                        </tr>
+                        {{end}}
+                        </tbody>
+                    </table>
+                {{/*<button type="button" class="btn btn-info pull-right" onclick="addLine('thisForm')">新增一列</button>*/}}
+                </div>
+                <!-- /.box-body -->
+            </form>
+        </div>
+        <!-- /.box -->
+    </div>
+    <!-- /.小班 -->
+    {{end}}
+</div>

@@ -1,0 +1,318 @@
+<form id="thisForm">
+    <input type="hidden" name="Id" id="Id" value="{{.m.Id}}">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>教师姓名</label>
+                <input type="text" name="Name" class="form-control" placeholder="教师姓名" value="{{.m.Name}}">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>性别</label>
+                <select name="Sex" id="Sex" class="form-control bs-select">
+                    <option value="1">男</option>
+                    <option value="2">女</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>身份证</label>
+                <input type="text" name="Idcard" class="form-control" placeholder="" value="{{.m.Idcard}}">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>电话</label>
+                <input type="text" name="Phone" class="form-control" placeholder="" value="{{.m.Phone}}">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>紧急联系人</label>
+                <input type="text" name="Contacter" class="form-control" placeholder="" value="{{.m.Contacter}}">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>紧急联系人电话</label>
+                <input type="text" name="ContacterPhone" class="form-control" placeholder="" value="{{.m.ContacterPhone}}">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>入职日期</label>
+                <input type="date" name="EntryTime" class="form-control" placeholder="" value="{{.m.EntryTime}}">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>到期日期</label>
+                <input type="date" name="ContractExpirationTime" class="form-control" placeholder="" value="{{.m.ContractExpirationTime}}">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>生日</label>
+                <input type="date" name="Birth" class="form-control" placeholder="生日" value="{{.m.Birth}}">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>卡号</label>
+                <input type="text" name="Cardno" class="form-control" placeholder="卡号" value="{{.m.Cardno}}">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-3">
+            <div class="form-group">
+                <label>幼小课时费</label>
+                <input type="text" name="Price1" class="form-control" placeholder="幼一课时费" value="{{.m.Price1}}">
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="form-group">
+                <label>小班</label>
+                <input type="text" name="Xprice1" class="form-control" placeholder="幼一小班课时费" value="{{.m.Xprice1}}">
+            </div>
+        </div><div class="col-xs-3">
+        <div class="form-group">
+            <label>幼中课时费</label>
+            <input type="text" name="Price2" class="form-control" placeholder="幼一课时费" value="{{.m.Price2}}">
+        </div>
+    </div>
+        <div class="col-xs-3">
+            <div class="form-group">
+                <label>小班</label>
+                <input type="text" name="Xprice2" class="form-control" placeholder="幼一小班课时费" value="{{.m.Xprice2}}">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">
+            <div class="form-group">
+                <label>幼大课时费</label>
+                <input type="text" name="Price3" class="form-control" placeholder="幼一课时费" value="{{.m.Price3}}">
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="form-group">
+                <label>小班</label>
+                <input type="text" name="Xprice3" class="form-control" placeholder="幼一小班课时费" value="{{.m.Xprice3}}">
+            </div>
+        </div><div class="col-xs-3">
+        <div class="form-group">
+            <label>一年级课时费</label>
+            <input type="text" name="Price10" class="form-control" placeholder="幼一课时费" value="{{.m.Price10}}">
+        </div>
+    </div>
+        <div class="col-xs-3">
+            <div class="form-group">
+                <label>小班</label>
+                <input type="text" name="Xprice10" class="form-control" placeholder="幼一小班课时费" value="{{.m.Xprice10}}">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">
+            <div class="form-group">
+                <label>二年级课时费</label>
+                <input type="text" name="Price20" class="form-control" placeholder="幼一课时费" value="{{.m.Price20}}">
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="form-group">
+                <label>小班</label>
+                <input type="text" name="Xprice20" class="form-control" placeholder="幼一小班课时费" value="{{.m.Xprice20}}">
+            </div>
+        </div><div class="col-xs-3">
+        <div class="form-group">
+            <label>三年级课时费</label>
+            <input type="text" name="Price30" class="form-control" placeholder="幼一课时费" value="{{.m.Price30}}">
+        </div>
+    </div>
+        <div class="col-xs-3">
+            <div class="form-group">
+                <label>小班</label>
+                <input type="text" name="Xprice30" class="form-control" placeholder="幼一小班课时费" value="{{.m.Xprice30}}">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">
+            <div class="form-group">
+                <label>四年级课时费</label>
+                <input type="text" name="Price40" class="form-control" placeholder="幼一课时费" value="{{.m.Price40}}">
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="form-group">
+                <label>小班</label>
+                <input type="text" name="Xprice40" class="form-control" placeholder="幼一小班课时费" value="{{.m.Xprice40}}">
+            </div>
+        </div><div class="col-xs-3">
+        <div class="form-group">
+            <label>五年级课时费</label>
+            <input type="text" name="Price50" class="form-control" placeholder="幼一课时费" value="{{.m.Price50}}">
+        </div>
+    </div>
+        <div class="col-xs-3">
+            <div class="form-group">
+                <label>小班</label>
+                <input type="text" name="Xprice50" class="form-control" placeholder="幼一小班课时费" value="{{.m.Xprice50}}">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">
+            <div class="form-group">
+                <label>六年级课时费</label>
+                <input type="text" name="Price60" class="form-control" placeholder="幼一课时费" value="{{.m.Price60}}">
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="form-group">
+                <label>小班</label>
+                <input type="text" name="Xprice60" class="form-control" placeholder="幼一小班课时费" value="{{.m.Xprice60}}">
+            </div>
+        </div><div class="col-xs-3">
+        <div class="form-group">
+            <label>初一课时费</label>
+            <input type="text" name="Price70" class="form-control" placeholder="幼一课时费" value="{{.m.Price70}}">
+        </div>
+    </div>
+        <div class="col-xs-3">
+            <div class="form-group">
+                <label>小班</label>
+                <input type="text" name="Xprice70" class="form-control" placeholder="幼一小班课时费" value="{{.m.Xprice70}}">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">
+            <div class="form-group">
+                <label>初二课时费</label>
+                <input type="text" name="Price80" class="form-control" placeholder="幼一课时费" value="{{.m.Price80}}">
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="form-group">
+                <label>小班</label>
+                <input type="text" name="Xprice80" class="form-control" placeholder="幼一小班课时费" value="{{.m.Xprice80}}">
+            </div>
+        </div><div class="col-xs-3">
+        <div class="form-group">
+            <label>初三课时费</label>
+            <input type="text" name="Price90" class="form-control" placeholder="幼一课时费" value="{{.m.Price90}}">
+        </div>
+    </div>
+        <div class="col-xs-3">
+            <div class="form-group">
+                <label>小班</label>
+                <input type="text" name="Xprice90" class="form-control" placeholder="幼一小班课时费" value="{{.m.Xprice90}}">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">
+            <div class="form-group">
+                <label>高一课时费</label>
+                <input type="text" name="Price100" class="form-control" placeholder="幼一课时费" value="{{.m.Price100}}">
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="form-group">
+                <label>小班</label>
+                <input type="text" name="Xprice100" class="form-control" placeholder="幼一小班课时费" value="{{.m.Xprice100}}">
+            </div>
+        </div><div class="col-xs-3">
+        <div class="form-group">
+            <label>高二课时费</label>
+            <input type="text" name="Price110" class="form-control" placeholder="幼一课时费" value="{{.m.Price110}}">
+        </div>
+    </div>
+        <div class="col-xs-3">
+            <div class="form-group">
+                <label>小班</label>
+                <input type="text" name="Xprice110" class="form-control" placeholder="幼一小班课时费" value="{{.m.Xprice110}}">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">
+            <div class="form-group">
+                <label>高三课时费</label>
+                <input type="text" name="Price120" class="form-control" placeholder="幼一课时费" value="{{.m.Price120}}">
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="form-group">
+                <label>小班</label>
+                <input type="text" name="Xprice120" class="form-control" placeholder="幼一小班课时费" value="{{.m.Xprice120}}">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>工资卡号</label>
+                <input type="text" name="SalaryCard" class="form-control" placeholder="工资卡号" value="{{.m.SalaryCard}}">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>社保账号</label>
+                <input type="text" name="SocialSecurity" class="form-control" placeholder="社保账号" value="{{.m.SocialSecurity}}">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>公积金账号</label>
+                <input type="text" name="Funds" class="form-control" placeholder="公积金账号" value="{{.m.Funds}}">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>地址</label>
+                <input type="text" name="Address" class="form-control" placeholder="地址" value="{{.m.Address}}">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>备注</label>
+                <input type="text" name="Note" class="form-control" placeholder="备注" value="{{.m.Note}}">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>校区</label>
+                <select name="SchoolId" id="School" class="form-control">
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>状态</label>
+                <select name="Status" id="Status" class="form-control">
+                </select>
+            </div>
+        </div>
+    </div>
+
+</form>
+</div>

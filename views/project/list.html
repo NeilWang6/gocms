@@ -1,0 +1,31 @@
+<div id=title><h1 class=ch-title>培训项目</h1>
+    <div class=en-title>Training Item</div>
+</div>
+<section id=scope>
+    <div class=scope-wrapper>
+        <div class="scope-aside">
+            <div class="aside-list " onclick="moveUlBar('')"><h3>{{/*$key*/}}</h3>
+
+                <ul style="height: 200px;" class="ul-">
+                {{range $key,$val := .nav}}
+                    {{range $val}}
+                    <li data-id="{{.Id}}" onclick="moveLiSelect(this,{{.Id}})" class="{{if eq .SchoolName "文化教学部"}}select{{end}}">{{.SchoolName}}</li>
+                    {{end}}
+                {{end}}
+                </ul>
+
+            </div>
+        </div>
+        <div class=scope-content>
+            {{range .projects}}
+            <div class="content-wrapper {{if eq .SchoolName "文化教学部"}}show{{end}}" data-id="{{.Id}}">
+                <div class="scope_logo">
+                    <img src="{{.ImageUrl}}" alt="">
+                </div>
+                {{str2html .Content}}
+            </div>
+            {{end}}
+        </div>
+
+    </div>
+</section>

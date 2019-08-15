@@ -1,0 +1,229 @@
+<!-- 验证插件 -->
+<script src="/static/plugins/jquery-validation/jquery.validate.min.js"></script>
+<script src="/static/plugins/jquery-validation/localization/messages_zh.min.js"></script>
+<!-- 针对当前主题进行简单封装，精简代码 -->
+<script src="/static/sdtheme/scripts/sdvalidate.js"></script>
+<script src="/static/product/scripts/common.js"></script>
+<script>
+	var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+    $(function () {
+        pageInit();
+    });
+    function pageInit(){
+        //下拉框初始化
+        statusSelectInit('{{.m.Status}}');
+        paymentSelectInit('{{.m.Payment}}');
+        contractTypeSelectInit('{{.m.Type}}');
+        //附值
+        //验证
+        validateInfo(); 
+    }
+    // 校区下拉框初始化
+    function schoolSelectInit(selecteds) {
+        var url = '{{urlfor "Student/SchoolController.DataList"}}';
+        var $select = $("#School");
+        $select.html('');
+        $.sdpost(url,{},function (re) {
+            if(re.code === 0) {
+                var html=[];
+                $(re.obj).each(function(i,e){
+                    html.push('<option value="' + e.id + '">' + e.name + '</option>')
+                });
+                $select.html(html.join(''));
+                $select.selectpicker({liveSearch:true});
+                $select.selectpicker('val',selecteds.split(','));
+            }else {
+                layer.alert("获取数据失败",{icon:2,title:'失败'})
+            }
+        })
+    }
+    // 学生地址框初始化
+    function adressSelectInit(selecteds) {
+        var url = '{{urlfor "StudentAreaController.DataList"}}';
+        var $select = $("#Adress");
+        $select.html('');
+        $.sdpost(url,{},function (re) {
+            if(re.code === 0) {
+                var html=[];
+                $(re.obj).each(function(i,e){
+                    html.push('<option value="' + e.name + '">' + e.name + '</option>')
+                });
+                $select.html(html.join(''));
+                $select.selectpicker({liveSearch:true});
+                $select.selectpicker('val',selecteds.split(','));
+            }else {
+                layer.alert("获取数据失败",{icon:2,title:'失败'})
+            }
+        })
+    }
+    function paymentSelectInit(selecteds) {
+        if (selecteds.length == 0) {selecteds = "cash";}
+        var $select = $("#Payment");
+        $select.html('');
+        var obj = paymentMap;
+        var html = [];
+        Object.keys(obj).forEach(function(key){
+            html.push('<option value="' + key + '">' + obj[key] + '</option>');
+        });
+        $select.html(html.join(''));
+        $select.selectpicker({liveSearch:true});
+        $select.selectpicker('val',selecteds.split(','));
+    }
+    function statusSelectInit(selecteds) {
+        if (selecteds.length == 0) {selecteds = 0;}
+        var $select = $("#Status");
+        $select.html('');
+        var obj = contractStatusMap;
+        var html = [];
+        Object.keys(obj).forEach(function(key){
+            html.push('<option value="' + key + '">' + obj[key] + '</option>');
+        });
+        $select.html(html.join(''));
+        $select.selectpicker({liveSearch:true});
+        $select.selectpicker('val',selecteds.split(','));
+    }
+    function contractTypeSelectInit(selecteds) {
+        var $select = $("#Type");
+        $select.html('');
+        var obj = contractTypeMap;
+        var html = [];
+        Object.keys(obj).forEach(function(key){
+            html.push('<option value="' + key + '">' + obj[key] + '</option>');
+        });
+        $select.html(html.join(''));
+        $select.selectpicker({liveSearch:true});
+        $select.selectpicker('val',selecteds.split(','));
+    }
+    //正则表达式验证
+    jQuery.validator.methods.mobile = function (value, element, param) {
+        //如果为空，直接过
+        if (value.length == 0) return true;
+        if (/^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))\d{8}$/.test(value)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    //表单验证及AJAX提交
+    function validateInfo() {
+        var $thisForm = $('#thisForm');
+        $thisForm.sdvalidate({
+            rules: {
+                Type: {
+                    maxlength: 4,
+                    required: true
+                },
+                Price: {
+                    maxlength: 16,
+                    required: true
+                },
+                Quantity: {
+                    maxlength: 16,
+                    required: true,
+                    min:1,
+                },
+                Guarder: {
+                    maxlength: 16,
+                    required: true,
+                },
+                Payment: {
+                    maxlength: 16,
+                    required: true,
+                },
+                Status: {
+                    maxlength: 4,
+                    required: true,
+                },
+                StudentId: {
+                    maxlength: 16,
+                    required: true,
+                    min:1,
+                },
+                SchoolId: {
+                    maxlength: 16,
+                    required: true,
+                },
+                StudentSchoolId: {
+                    maxlength: 16,
+                    required: true,
+                },
+            },
+            messages: {
+                Mobile: {
+                    mobile: "请输入正确的手机号",
+                },
+            },
+            submitHandler: function (form) {
+				var url ='{{ urlfor "Student/ContractController.Edit"}}';
+				var price = $("#Price").val();
+				var data = $thisForm.serialize();
+				data += "&Price="+price;
+				$.sdpost(url,data,function(re){
+					if(re.code === 0){
+						parent.layer.msg(re.msg);
+						parent.refresh(re.obj);
+						parent.layer.close(index);
+					}else{
+						parent.layer.alert(re.msg,{icon:2,title:'失败'})
+					}
+				});
+               return false;
+            }
+        });
+    }
+
+    function FormSubmit() {
+        $("#thisForm").submit();		
+    }
+    function searchStudent() {
+        var code = document.getElementById("Code").value;
+        var url = '{{ urlfor "Student/StudentController.Search" }}';
+        var data = {"Code":code};
+        $.sdget(url,data,function (re) {
+            if(re.code === 0) {
+                $("#Name").val(re.obj.name);
+                $("#Guarder").val(re.obj.guarder);
+                $("#Contact1").val(re.obj.contact1);
+                $("#StudentId").val(re.obj.id);
+                $("#Grade").val(re.obj.grade);
+            }
+        })
+    }
+    function searchPrice() {
+        var url = '{{ urlfor "Student/ContractPriceController.Search" }}';
+        var grade = document.getElementById("Grade").value;
+        var schoolId = document.getElementById("SchoolId").value;
+        var type = $("#Type").val();
+        var length = $("#Quantity").val();
+        var data = {"Grade":grade, "Type":type,"SchoolId":schoolId,"Quantity":length};
+        $.sdget(url,data,function (re) {
+            if(re.code === 501) {
+                return false;
+            }else if(re.code === 0) {
+                $("#Price").attr("value", "");
+                $("#Price").attr("value", re.obj.val);
+                var amount = re.obj.val * length;
+                $("#Amount").attr("value", amount);
+                if (re.obj.is_lock == 1) {
+                    $('#Price').attr("disabled","disabled");
+                }else {
+                    $("#Price").removeAttr("disabled");
+                }
+                return false;
+            }else {
+                $("#Price").attr("value", 0);
+                $("#Price").removeAttr("disabled");
+                return false;
+            }
+        })
+    }
+    $("#Price").on("change", function () {
+        var price = $("#Price").val();
+        var quantity = $("#Quantity").val();
+        var amount = price * quantity;
+        $("#Amount").removeAttr("disabled");
+        $("#Amount").attr("value", "");
+        $("#Amount").attr("value", amount);
+        $('#Amount').attr("disabled","disabled");
+    })
+</script>

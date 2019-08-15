@@ -1,0 +1,15 @@
+<section id="container" style="min-height: 216.945px;">
+    <ul class="news-list">
+        {{range $key,$val := .news}}
+        <li class="wow fadeInUp" data-wow-delay="0.2*{{$key}}s" style="visibility: visible; animation-delay: 0.2*{{$key}}s; animation-name: fadeInUp;">
+            <a href="/m/news/{{$val.Id}}">
+                <div class="item_date"><span><span>{{date $val.CreatedAt "Y-m-d"}}</span></span></div>
+                <h3 class="item_title">{{$val.Name}}</h3>
+                <div class="item_con">
+                    {{str2html $val.Content}}
+                </div>
+            </a>
+        </li>
+        {{end}}
+    </ul>
+</section>

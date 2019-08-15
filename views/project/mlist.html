@@ -1,0 +1,45 @@
+<section id="scope">
+    <div class="nav-wrapper">
+        <h2 class="scope-title"><span></span> <i id="select" class=""></i></h2>
+        {{/*<h2 class="scope-title"><span>上海</span> <i id="select" class="iconfont iconxiajiantou"></i></h2>*/}}
+        {{/*<ul class="scope-nav" style="height: 0px;">*/}}
+            {{/*{{range $key,$val := .nav}}*/}}
+            {{/*<li data-id="{{$key}}" class=""><a href="javascript:;">{{$key}}</a></li>*/}}
+            {{/*{{end}}*/}}
+        {{/*</ul>*/}}
+        <ul class="select-list owl-carousel owl-loaded owl-drag">
+            <div class="owl-stage-outer">
+                <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: 0s; width: 836px;">
+                    {{range $key,$val := .nav}}
+                    <div class="owl-item" style="width: auto;">
+                        {{range $val}}
+                        <li data-id="{{$key}}" class="{{if eq .SchoolName "文化教育部"}}select show{{end}}"><span>{{.SchoolName}}</span></li>
+                        {{end}}
+                    </div>
+                    {{end}}
+                </div>
+            </div>
+            <div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button>
+            </div>
+            <div class="owl-dots disabled">
+
+            </div>
+        </ul>
+    </div>
+    <div class="scope-content">
+        {{range .projects}}
+        <div class="content-wrapper {{if eq .SchoolName "文化教育部"}}show{{end}}" data-id="{{.SchoolName}}">
+            {{/*<div class="scope_logo">*/}}
+                {{/*<img src="{{.ImageUrl}}" alt="">*/}}
+            {{/*</div>*/}}
+            <div>
+                {{str2html .Content}}
+            </div>
+            {{/*<div class="link">*/}}
+                {{/*<span>了解详情:</span>*/}}
+                {{/*<a href="http://bj.jingrui.cn " target="_blank">http://bj.jingrui.cn </a>*/}}
+            {{/*</div>*/}}
+        </div>
+        {{end}}
+    </div>
+</section>

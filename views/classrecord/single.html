@@ -1,0 +1,75 @@
+<div class="col-md-12">
+    <div class="box">
+        <form id="thisForm">
+        <div class="box-header">
+            <h3 class="box-title">排课管理</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body no-padding">
+            <table class="table table-condensed">
+                <tbody >
+                <tr class="price-line">
+                    <td style="width: 16%">
+                        <div class="">
+                            <div class="form-group">
+                                <label>学生</label>
+                                <select name="StudentId" id="Student" class="form-control"></select>
+                            </div>
+                        </div>
+                    </td>
+                    <td style="width: 16%">
+                        <div class="">
+                            <div class="form-group">
+                                <label>科目</label>
+                                <select name="SubjectId" id="Subject" class="form-control"></select>
+                            </div>
+                        </div>
+                    </td>
+                    <td style="width: 16%">
+                        <div class="">
+                            <div class="form-group">
+                                <label>教师</label>
+                                <select name="TeacherId" id="Teacher" class="form-control"></select>
+                            </div>
+                        </div>
+                    </td>
+                    <td style="width: 16%">
+                        <div class="">
+                            <div class="form-group">
+                                <label>时间段</label>
+                                <select name="Time" id="Range" class="form-control"></select>
+                            </div>
+                        </div>
+                    </td>
+                    <td style="width: 16%">
+                        <div class="">
+                            <div class="form-group">
+                                <label>时长</label>
+                                <select name="Length" id="Length" class="form-control"></select>
+                            </div>
+                        </div>
+                    </td>
+                    <td style="width: 16%">
+                        <div class="">
+                            <div class="form-group">
+                                <label>日期</label>
+                                <input type="date" name="Date" class="form-control">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-info form-control pull-left" onclick="edit()">确认</button>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- /.box-body -->
+        </form>
+    </div>
+    <!-- /.box -->
+</div>

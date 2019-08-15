@@ -1,0 +1,986 @@
+<div class="col-md-12">
+    {{range .final}}
+
+    <div class="box">
+        <form id="thisForm_{{.Id}}">
+            <input type="hidden" name="Id" value="{{.Id}}">
+            <input type="hidden" name="TeacherId" value="{{.TeacherId}}">
+            <input type="hidden" name="SubjectId" value="{{.SubjectId}}">
+            <input type="hidden" name="SchoolId" value="{{.SchoolId}}">
+            <input type="hidden" name="MondayDate" value="{{.MondayDate}}">
+        <div class="box-header">
+            <h3 class="box-title">【教师】：{{ .TeacherName }}&nbsp;&nbsp;&nbsp;【科目】：{{ .SubjectName }}</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body no-padding">
+            <table class="table table-condensed">
+                <tbody>
+                <tr>
+                    <th>&nbsp;&nbsp;&nbsp;&nbsp;时段</th>
+                    <th>&nbsp;&nbsp;&nbsp;&nbsp;周一</th>
+                    <th>&nbsp;&nbsp;&nbsp;&nbsp;周二</th>
+                    <th>&nbsp;&nbsp;&nbsp;&nbsp;周三</th>
+                    <th>&nbsp;&nbsp;&nbsp;&nbsp;周四</th>
+                    <th>&nbsp;&nbsp;&nbsp;&nbsp;周五</th>
+                    <th>&nbsp;&nbsp;&nbsp;&nbsp;周六</th>
+                    <th>&nbsp;&nbsp;&nbsp;&nbsp;周日</th>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group"><div class="" style="width: 50px;">6-8</div></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class10" onmouseover="studentSelectInit(this, {{.Class10}})" style="width: 80px;">
+                                {{if gt .Class10 0}}
+                                    <option value="{{.Class10}}">{{.Class10Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class10Length" onmouseover="lengthSelectInit(this, {{.Class10Length}})" style="width: 80px;">
+                                {{if gt .Class10Length 0.0}}
+                                    <option value="{{.Class10Length}}">{{.Class10Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class20" onmouseover="studentSelectInit(this, {{.Class20}})" style="width: 80px;">
+                                {{if gt .Class20 0}}
+                                    <option value="{{.Class20}}">{{.Class20Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class20Length" onmouseover="lengthSelectInit(this, {{.Class20Length}})" style="width: 80px;">
+                                {{if gt .Class20Length 0.0}}
+                                    <option value="{{.Class20Length}}">{{.Class20Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class30" onmouseover="studentSelectInit(this, {{.Class30}})" style="width: 80px;">
+                                {{if gt .Class30 0}}
+                                    <option value="{{.Class30}}">{{.Class30Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class30Length" onmouseover="lengthSelectInit(this, {{.Class30Length}})" style="width: 80px;">
+                                {{if gt .Class30Length 0.0}}
+                                    <option value="{{.Class30Length}}">{{.Class30Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class40" onmouseover="studentSelectInit(this, {{.Class40}})" style="width: 80px;">
+                                {{if gt .Class40 0}}
+                                    <option value="{{.Class40}}">{{.Class40Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class40Length" onmouseover="lengthSelectInit(this, {{.Class40Length}})" style="width: 80px;">
+                                {{if gt .Class40Length 0.0}}
+                                    <option value="{{.Class40Length}}">{{.Class40Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class50" onmouseover="studentSelectInit(this, {{.Class50}})" style="width: 80px;">
+                                {{if gt .Class50 0}}
+                                    <option value="{{.Class50}}">{{.Class50Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class50Length" onmouseover="lengthSelectInit(this, {{.Class50Length}})" style="width: 80px;">
+                                {{if gt .Class50Length 0.0}}
+                                    <option value="{{.Class50Length}}">{{.Class50Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class60" onmouseover="studentSelectInit(this, {{.Class60}})" style="width: 80px;">
+                                {{if gt .Class60 0}}
+                                    <option value="{{.Class60}}">{{.Class60Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class60Length" onmouseover="lengthSelectInit(this, {{.Class60Length}})" style="width: 80px;">
+                                {{if gt .Class60Length 0.0}}
+                                    <option value="{{.Class60Length}}">{{.Class60Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class70" onmouseover="studentSelectInit(this, {{.Class70}})" style="width: 80px;">
+                                {{if gt .Class70 0}}
+                                    <option value="{{.Class70}}">{{.Class70Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class70Length" onmouseover="lengthSelectInit(this, {{.Class70Length}})" style="width: 80px;">
+                                {{if gt .Class70Length 0.0}}
+                                    <option value="{{.Class70Length}}">{{.Class70Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                </tr><tr>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group"><div class="" style="width: 50px;">8-10</div></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class80" onmouseover="studentSelectInit(this, {{.Class80}})" style="width: 80px;">
+                                {{if gt .Class80 0}}
+                                    <option value="{{.Class80}}">{{.Class80Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class80Length" onmouseover="lengthSelectInit(this, {{.Class80Length}})" style="width: 80px;">
+                                {{if gt .Class80Length 0.0}}
+                                    <option value="{{.Class80Length}}">{{.Class80Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class90" onmouseover="studentSelectInit(this, {{.Class90}})" style="width: 80px;">
+                                {{if gt .Class90 0}}
+                                    <option value="{{.Class90}}">{{.Class90Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class90Length" onmouseover="lengthSelectInit(this, {{.Class90Length}})" style="width: 80px;">
+                                {{if gt .Class90Length 0.0}}
+                                    <option value="{{.Class90Length}}">{{.Class90Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class100" onmouseover="studentSelectInit(this, {{.Class100}})" style="width: 80px;">
+                                {{if gt .Class100 0}}
+                                    <option value="{{.Class100}}">{{.Class100Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class100Length" onmouseover="lengthSelectInit(this, {{.Class100Length}})" style="width: 80px;">
+                                {{if gt .Class100Length 0.0}}
+                                    <option value="{{.Class100Length}}">{{.Class100Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class110" onmouseover="studentSelectInit(this, {{.Class110}})" style="width: 80px;">
+                                {{if gt .Class110 0}}
+                                    <option value="{{.Class110}}">{{.Class110Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class110Length" onmouseover="lengthSelectInit(this, {{.Class110Length}})" style="width: 80px;">
+                                {{if gt .Class110Length 0.0}}
+                                    <option value="{{.Class110Length}}">{{.Class110Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class120" onmouseover="studentSelectInit(this, {{.Class120}})" style="width: 80px;">
+                                {{if gt .Class120 0}}
+                                    <option value="{{.Class120}}">{{.Class120Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class120Length" onmouseover="lengthSelectInit(this, {{.Class120Length}})" style="width: 80px;">
+                                {{if gt .Class120Length 0.0}}
+                                    <option value="{{.Class120Length}}">{{.Class120Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class130" onmouseover="studentSelectInit(this, {{.Class130}})" style="width: 80px;">
+                                {{if gt .Class130 0}}
+                                    <option value="{{.Class130}}">{{.Class130Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class130Length" onmouseover="lengthSelectInit(this, {{.Class130Length}})" style="width: 80px;">
+                                {{if gt .Class130Length 0.0}}
+                                    <option value="{{.Class130Length}}">{{.Class130Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class140" onmouseover="studentSelectInit(this, {{.Class140}})" style="width: 80px;">
+                                {{if gt .Class140 0}}
+                                    <option value="{{.Class140}}">{{.Class140Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class140Length" onmouseover="lengthSelectInit(this, {{.Class140Length}})" style="width: 80px;">
+                                {{if gt .Class140Length 0.0}}
+                                    <option value="{{.Class140Length}}">{{.Class140Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                </tr><tr>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group"><div class="" style="width: 50px;">10-12</div></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class150" onmouseover="studentSelectInit(this, {{.Class150}})" style="width: 80px;">
+                                {{if gt .Class150 0}}
+                                    <option value="{{.Class150}}">{{.Class150Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class150Length" onmouseover="lengthSelectInit(this, {{.Class150Length}})" style="width: 80px;">
+                                {{if gt .Class150Length 0.0}}
+                                    <option value="{{.Class150Length}}">{{.Class150Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class160" onmouseover="studentSelectInit(this, {{.Class160}})" style="width: 80px;">
+                                {{if gt .Class160 0}}
+                                    <option value="{{.Class160}}">{{.Class160Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class160Length" onmouseover="lengthSelectInit(this, {{.Class160Length}})" style="width: 80px;">
+                                {{if gt .Class160Length 0.0}}
+                                    <option value="{{.Class160Length}}">{{.Class160Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class170" onmouseover="studentSelectInit(this, {{.Class170}})" style="width: 80px;">
+                                {{if gt .Class170 0}}
+                                    <option value="{{.Class170}}">{{.Class170Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class170Length" onmouseover="lengthSelectInit(this, {{.Class170Length}})" style="width: 80px;">
+                                {{if gt .Class170Length 0.0}}
+                                    <option value="{{.Class170Length}}">{{.Class170Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class180" onmouseover="studentSelectInit(this, {{.Class180}})" style="width: 80px;">
+                                {{if gt .Class180 0}}
+                                    <option value="{{.Class180}}">{{.Class180Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class180Length" onmouseover="lengthSelectInit(this, {{.Class180Length}})" style="width: 80px;">
+                                {{if gt .Class180Length 0.0}}
+                                    <option value="{{.Class180Length}}">{{.Class180Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class190" onmouseover="studentSelectInit(this, {{.Class190}})" style="width: 80px;">
+                                {{if gt .Class190 0}}
+                                    <option value="{{.Class190}}">{{.Class190Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class190Length" onmouseover="lengthSelectInit(this, {{.Class190Length}})" style="width: 80px;">
+                                {{if gt .Class190Length 0.0}}
+                                    <option value="{{.Class190Length}}">{{.Class190Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class200" onmouseover="studentSelectInit(this, {{.Class200}})" style="width: 80px;">
+                                {{if gt .Class200 0}}
+                                    <option value="{{.Class200}}">{{.Class200Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class200Length" onmouseover="lengthSelectInit(this, {{.Class200Length}})" style="width: 80px;">
+                                {{if gt .Class200Length 0.0}}
+                                    <option value="{{.Class200Length}}">{{.Class200Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class210" onmouseover="studentSelectInit(this, {{.Class210}})" style="width: 80px;">
+                                {{if gt .Class210 0}}
+                                    <option value="{{.Class210}}">{{.Class210Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class210Length" onmouseover="lengthSelectInit(this, {{.Class210Length}})" style="width: 80px;">
+                                {{if gt .Class210Length 0.0}}
+                                    <option value="{{.Class210Length}}">{{.Class210Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                </tr><tr>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group"><div class="" style="width: 50px;">13-15</div></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class220" onmouseover="studentSelectInit(this, {{.Class220}})" style="width: 80px;">
+                                {{if gt .Class220 0}}
+                                    <option value="{{.Class220}}">{{.Class220Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class220Length" onmouseover="lengthSelectInit(this, {{.Class220Length}})" style="width: 80px;">
+                                {{if gt .Class220Length 0.0}}
+                                    <option value="{{.Class220Length}}">{{.Class220Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class230" onmouseover="studentSelectInit(this, {{.Class230}})" style="width: 80px;">
+                                {{if gt .Class230 0}}
+                                    <option value="{{.Class230}}">{{.Class230Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class230Length" onmouseover="lengthSelectInit(this, {{.Class230Length}})" style="width: 80px;">
+                                {{if gt .Class230Length 0.0}}
+                                    <option value="{{.Class230Length}}">{{.Class230Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class240" onmouseover="studentSelectInit(this, {{.Class240}})" style="width: 80px;">
+                                {{if gt .Class240 0}}
+                                    <option value="{{.Class240}}">{{.Class240Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class240Length" onmouseover="lengthSelectInit(this, {{.Class240Length}})" style="width: 80px;">
+                                {{if gt .Class240Length 0.0}}
+                                    <option value="{{.Class240Length}}">{{.Class240Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class250" onmouseover="studentSelectInit(this, {{.Class250}})" style="width: 80px;">
+                                {{if gt .Class250 0}}
+                                    <option value="{{.Class250}}">{{.Class250Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class250Length" onmouseover="lengthSelectInit(this, {{.Class250Length}})" style="width: 80px;">
+                                {{if gt .Class250Length 0.0}}
+                                    <option value="{{.Class250Length}}">{{.Class250Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class260" onmouseover="studentSelectInit(this, {{.Class260}})" style="width: 80px;">
+                                {{if gt .Class260 0}}
+                                    <option value="{{.Class260}}">{{.Class260Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class260Length" onmouseover="lengthSelectInit(this, {{.Class260Length}})" style="width: 80px;">
+                                {{if gt .Class260Length 0.0}}
+                                    <option value="{{.Class260Length}}">{{.Class260Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class270" onmouseover="studentSelectInit(this, {{.Class270}})" style="width: 80px;">
+                                {{if gt .Class270 0}}
+                                    <option value="{{.Class270}}">{{.Class270Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class270Length" onmouseover="lengthSelectInit(this, {{.Class270Length}})" style="width: 80px;">
+                                {{if gt .Class270Length 0.0}}
+                                    <option value="{{.Class270Length}}">{{.Class270Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class280" onmouseover="studentSelectInit(this, {{.Class280}})" style="width: 80px;">
+                                {{if gt .Class280 0}}
+                                    <option value="{{.Class280}}">{{.Class280Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class280Length" onmouseover="lengthSelectInit(this, {{.Class280Length}})" style="width: 80px;">
+                                {{if gt .Class280Length 0.0}}
+                                    <option value="{{.Class280Length}}">{{.Class280Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                </tr><tr>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group"><div class="" style="width: 50px;">15-17</div></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class290" onmouseover="studentSelectInit(this, {{.Class290}})" style="width: 80px;">
+                                {{if gt .Class290 0}}
+                                    <option value="{{.Class290}}">{{.Class290Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class290Length" onmouseover="lengthSelectInit(this, {{.Class290Length}})" style="width: 80px;">
+                                {{if gt .Class290Length 0.0}}
+                                    <option value="{{.Class290Length}}">{{.Class290Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class300" onmouseover="studentSelectInit(this, {{.Class300}})" style="width: 80px;">
+                                {{if gt .Class300 0}}
+                                    <option value="{{.Class300}}">{{.Class300Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class300Length" onmouseover="lengthSelectInit(this, {{.Class300Length}})" style="width: 80px;">
+                                {{if gt .Class300Length 0.0}}
+                                    <option value="{{.Class300Length}}">{{.Class300Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class310" onmouseover="studentSelectInit(this, {{.Class310}})" style="width: 80px;">
+                                {{if gt .Class310 0}}
+                                    <option value="{{.Class310}}">{{.Class310Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class310Length" onmouseover="lengthSelectInit(this, {{.Class310Length}})" style="width: 80px;">
+                                {{if gt .Class310Length 0.0}}
+                                    <option value="{{.Class310Length}}">{{.Class310Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class320" onmouseover="studentSelectInit(this, {{.Class320}})" style="width: 80px;">
+                                {{if gt .Class320 0}}
+                                    <option value="{{.Class320}}">{{.Class320Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class320Length" onmouseover="lengthSelectInit(this, {{.Class320Length}})" style="width: 80px;">
+                                {{if gt .Class320Length 0.0}}
+                                    <option value="{{.Class320Length}}">{{.Class320Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class330" onmouseover="studentSelectInit(this, {{.Class330}})" style="width: 80px;">
+                                {{if gt .Class330 0}}
+                                    <option value="{{.Class330}}">{{.Class330Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class330Length" onmouseover="lengthSelectInit(this, {{.Class330Length}})" style="width: 80px;">
+                                {{if gt .Class330Length 0.0}}
+                                    <option value="{{.Class330Length}}">{{.Class330Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class340" onmouseover="studentSelectInit(this, {{.Class340}})" style="width: 80px;">
+                                {{if gt .Class340 0}}
+                                    <option value="{{.Class340}}">{{.Class340Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class340Length" onmouseover="lengthSelectInit(this, {{.Class340Length}})" style="width: 80px;">
+                                {{if gt .Class340Length 0.0}}
+                                    <option value="{{.Class340Length}}">{{.Class340Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class350" onmouseover="studentSelectInit(this, {{.Class350}})" style="width: 80px;">
+                                {{if gt .Class350 0}}
+                                    <option value="{{.Class350}}">{{.Class350Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class350Length" onmouseover="lengthSelectInit(this, {{.Class350Length}})" style="width: 80px;">
+                                {{if gt .Class350Length 0.0}}
+                                    <option value="{{.Class350Length}}">{{.Class350Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                </tr><tr>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group"><div class="" style="width: 50px;">17-19</div></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class360" onmouseover="studentSelectInit(this, {{.Class360}})" style="width: 80px;">
+                                {{if gt .Class360 0}}
+                                    <option value="{{.Class360}}">{{.Class360Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class360Length" onmouseover="lengthSelectInit(this, {{.Class360Length}})" style="width: 80px;">
+                                {{if gt .Class360Length 0.0}}
+                                    <option value="{{.Class360Length}}">{{.Class360Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class370" onmouseover="studentSelectInit(this, {{.Class370}})" style="width: 80px;">
+                                {{if gt .Class370 0}}
+                                    <option value="{{.Class370}}">{{.Class370Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class370Length" onmouseover="lengthSelectInit(this, {{.Class370Length}})" style="width: 80px;">
+                                {{if gt .Class370Length 0.0}}
+                                    <option value="{{.Class370Length}}">{{.Class370Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class380" onmouseover="studentSelectInit(this, {{.Class380}})" style="width: 80px;">
+                                {{if gt .Class380 0}}
+                                    <option value="{{.Class380}}">{{.Class380Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class380Length" onmouseover="lengthSelectInit(this, {{.Class380Length}})" style="width: 80px;">
+                                {{if gt .Class380Length 0.0}}
+                                    <option value="{{.Class380Length}}">{{.Class380Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class390" onmouseover="studentSelectInit(this, {{.Class390}})" style="width: 80px;">
+                                {{if gt .Class390 0}}
+                                    <option value="{{.Class390}}">{{.Class390Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class390Length" onmouseover="lengthSelectInit(this, {{.Class390Length}})" style="width: 80px;">
+                                {{if gt .Class390Length 0.0}}
+                                    <option value="{{.Class390Length}}">{{.Class390Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class400" onmouseover="studentSelectInit(this, {{.Class400}})" style="width: 80px;">
+                                {{if gt .Class400 0}}
+                                    <option value="{{.Class400}}">{{.Class400Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class400Length" onmouseover="lengthSelectInit(this, {{.Class400Length}})" style="width: 80px;">
+                                {{if gt .Class400Length 0.0}}
+                                    <option value="{{.Class400Length}}">{{.Class400Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class410" onmouseover="studentSelectInit(this, {{.Class410}})" style="width: 80px;">
+                                {{if gt .Class410 0}}
+                                    <option value="{{.Class410}}">{{.Class410Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class410Length" onmouseover="lengthSelectInit(this, {{.Class410Length}})" style="width: 80px;">
+                                {{if gt .Class410Length 0.0}}
+                                    <option value="{{.Class410Length}}">{{.Class410Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class420" onmouseover="studentSelectInit(this, {{.Class420}})" style="width: 80px;">
+                                {{if gt .Class420 0}}
+                                    <option value="{{.Class420}}">{{.Class420Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class420Length" onmouseover="lengthSelectInit(this, {{.Class420Length}})" style="width: 80px;">
+                                {{if gt .Class420Length 0.0}}
+                                    <option value="{{.Class420Length}}">{{.Class420Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                </tr><tr>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group"><div class="" style="width: 50px;">19-21</div></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class430" onmouseover="studentSelectInit(this, {{.Class430}})" style="width: 80px;">
+                                {{if gt .Class430 0}}
+                                    <option value="{{.Class430}}">{{.Class430Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class430Length" onmouseover="lengthSelectInit(this, {{.Class430Length}})" style="width: 80px;">
+                                {{if gt .Class430Length 0.0}}
+                                    <option value="{{.Class430Length}}">{{.Class430Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class440" onmouseover="studentSelectInit(this, {{.Class440}})" style="width: 80px;">
+                                {{if gt .Class440 0}}
+                                    <option value="{{.Class440}}">{{.Class440Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class440Length" onmouseover="lengthSelectInit(this, {{.Class440Length}})" style="width: 80px;">
+                                {{if gt .Class440Length 0.0}}
+                                    <option value="{{.Class440Length}}">{{.Class440Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class450" onmouseover="studentSelectInit(this, {{.Class450}})" style="width: 80px;">
+                                {{if gt .Class450 0}}
+                                    <option value="{{.Class450}}">{{.Class450Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class450Length" onmouseover="lengthSelectInit(this, {{.Class450Length}})" style="width: 80px;">
+                                {{if gt .Class450Length 0.0}}
+                                    <option value="{{.Class450Length}}">{{.Class450Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class460" onmouseover="studentSelectInit(this, {{.Class460}})" style="width: 80px;">
+                                {{if gt .Class460 0}}
+                                    <option value="{{.Class460}}">{{.Class460Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class460Length" onmouseover="lengthSelectInit(this, {{.Class460Length}})" style="width: 80px;">
+                                {{if gt .Class460Length 0.0}}
+                                    <option value="{{.Class460Length}}">{{.Class460Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class470" onmouseover="studentSelectInit(this, {{.Class470}})" style="width: 80px;">
+                                {{if gt .Class470 0}}
+                                    <option value="{{.Class470}}">{{.Class470Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class470Length" onmouseover="lengthSelectInit(this, {{.Class470Length}})" style="width: 80px;">
+                                {{if gt .Class470Length 0.0}}
+                                    <option value="{{.Class470Length}}">{{.Class470Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class480" onmouseover="studentSelectInit(this, {{.Class480}})" style="width: 80px;">
+                                {{if gt .Class480 0}}
+                                    <option value="{{.Class480}}">{{.Class480Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class480Length" onmouseover="lengthSelectInit(this, {{.Class480Length}})" style="width: 80px;">
+                                {{if gt .Class480Length 0.0}}
+                                    <option value="{{.Class480Length}}">{{.Class480Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class490" onmouseover="studentSelectInit(this, {{.Class490}})" style="width: 80px;">
+                                {{if gt .Class490 0}}
+                                    <option value="{{.Class490}}">{{.Class490Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class490Length" onmouseover="lengthSelectInit(this, {{.Class490Length}})" style="width: 80px;">
+                                {{if gt .Class490Length 0.0}}
+                                    <option value="{{.Class490Length}}">{{.Class490Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                </tr><tr>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group"><div class="" style="width: 50px;">21-23</div></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class500" onmouseover="studentSelectInit(this, {{.Class500}})" style="width: 80px;">
+                                {{if gt .Class500 0}}
+                                    <option value="{{.Class500}}">{{.Class500Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class500Length" onmouseover="lengthSelectInit(this, {{.Class500Length}})" style="width: 80px;">
+                                {{if gt .Class500Length 0.0}}
+                                    <option value="{{.Class500Length}}">{{.Class500Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class510" onmouseover="studentSelectInit(this, {{.Class510}})" style="width: 80px;">
+                                {{if gt .Class510 0}}
+                                    <option value="{{.Class510}}">{{.Class510Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class510Length" onmouseover="lengthSelectInit(this, {{.Class510Length}})" style="width: 80px;">
+                                {{if gt .Class510Length 0.0}}
+                                    <option value="{{.Class510Length}}">{{.Class510Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class520" onmouseover="studentSelectInit(this, {{.Class520}})" style="width: 80px;">
+                                {{if gt .Class520 0}}
+                                    <option value="{{.Class520}}">{{.Class520Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class520Length" onmouseover="lengthSelectInit(this, {{.Class520Length}})" style="width: 80px;">
+                                {{if gt .Class520Length 0.0}}
+                                    <option value="{{.Class520Length}}">{{.Class520Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class530" onmouseover="studentSelectInit(this, {{.Class530}})" style="width: 80px;">
+                                {{if gt .Class530 0}}
+                                    <option value="{{.Class530}}">{{.Class530Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class530Length" onmouseover="lengthSelectInit(this, {{.Class530Length}})" style="width: 80px;">
+                                {{if gt .Class530Length 0.0}}
+                                    <option value="{{.Class530Length}}">{{.Class530Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class540" onmouseover="studentSelectInit(this, {{.Class540}})" style="width: 80px;">
+                                {{if gt .Class540 0}}
+                                    <option value="{{.Class540}}">{{.Class540Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class540Length" onmouseover="lengthSelectInit(this, {{.Class540Length}})" style="width: 80px;">
+                                {{if gt .Class540Length 0.0}}
+                                    <option value="{{.Class540Length}}">{{.Class540Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class550" onmouseover="studentSelectInit(this, {{.Class550}})" style="width: 80px;">
+                                {{if gt .Class550 0}}
+                                    <option value="{{.Class550}}">{{.Class550Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class550Length" onmouseover="lengthSelectInit(this, {{.Class550Length}})" style="width: 80px;">
+                                {{if gt .Class550Length 0.0}}
+                                    <option value="{{.Class550Length}}">{{.Class550Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-4">
+                            <div class="form-group" style="width: 80px;">
+                                <select class="Subject form-control" name="Class560" onmouseover="studentSelectInit(this, {{.Class560}})" style="width: 80px;">
+                                {{if gt .Class560 0}}
+                                    <option value="{{.Class560}}">{{.Class560Name}}</option>
+                                {{end}}
+                                </select>
+                                <select class="Length form-control" name="Class560Length" onmouseover="lengthSelectInit(this, {{.Class560Length}})" style="width: 80px;">
+                                {{if gt .Class560Length 0.0}}
+                                    <option value="{{.Class560Length}}">{{.Class560Length}}</option>
+                                {{end}}
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <button type="button" class="btn btn-info pull-left" onclick="edit('thisForm_'+{{.Id}})">确认</button>
+            <label class="btn fa-navicon pull-left"></label>
+            <button type="button" class="btn btn-danger pull-left" onclick="clearClass({{.Id}})">清空</button>
+        </div>
+        <!-- /.box-body -->
+        </form>
+    </div>
+    {{end}}
+    <!-- /.box -->
+</div>

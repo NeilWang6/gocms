@@ -1,0 +1,98 @@
+<form id="thisForm">
+    <input type="hidden" name="Id" id="Id" value="{{.m.Id}}">
+    <input type="hidden" name="StudentId" id="StudentId" value="{{.m.Student.Id}}">
+    <input type="hidden" name="Grade" id="Grade" value="{{.m.Student.Grade}}">
+    <input type="hidden" name="SchoolId" id="SchoolId" value="{{.school_id}}">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>学生编号</label>
+                <input type="text" id="Code" name="Code" class="form-control" {{if gt .m.Id 0}} disabled="disabled" {{end}} placeholder="学生编号" value="{{.m.Student.Code}}">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>学生姓名</label>
+                <input type="text" id="Name" name="Name" class="form-control" disabled="disabled" placeholder="学生姓名" value="{{.m.Student.Name}}">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>监护人</label>
+                <input type="text" id="Guarder" name="Guarder" class="form-control" disabled="disabled" placeholder="监护人" value="{{.m.Student.Guarder}}">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>联系方式</label>
+                <input type="text" id="Contact1" name="Contact1" class="form-control"  disabled="disabled" placeholder="联系方式" value="{{.m.Student.Contact1}}">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <button type="button" class="btn btn-info pull-left" onclick="searchStudent()">找学生</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>合同类型</label>
+                <select name="Type" id="Type"  {{if gt .m.Id 0}} disabled="disabled" {{end}} class="form-control" >
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>时长</label>
+                <input type="text" name="Quantity" id="Quantity" class="form-control" {{if gt .m.Id 0}} disabled="disabled" {{end}} placeholder="" value="{{.m.Quantity}}">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <button type="button" class="btn btn-info pull-right" onclick="searchPrice()">查询单价</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>单价</label>
+                <input type="text" name="Price" id="Price" class="form-control" disabled="disabled" placeholder="合同类型" value="{{.m.Price}}">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>总金额</label>
+                <input type="text" name="Amount" id="Amount" disabled="disabled" class="form-control" placeholder="" value="{{.m.Amount}}">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>支付方式</label>
+                <select name="Payment" id="Payment" {{if gt .m.Id 0}} disabled="disabled" {{end}} class="form-control" >
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>状态</label>
+                <select name="Status" id="Status" class="form-control">
+                </select>
+            </div>
+        </div>
+    </div>
+</form>
+</div>

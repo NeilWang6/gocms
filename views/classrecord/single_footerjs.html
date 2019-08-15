@@ -1,0 +1,141 @@
+  <!-- 验证插件 -->
+<script src="/static/plugins/jquery-validation/jquery.validate.min.js"></script>
+<script src="/static/plugins/jquery-validation/localization/messages_zh.min.js"></script>
+<!-- 针对当前主题进行简单封装，精简代码 -->
+<script src="/static/sdtheme/scripts/sdvalidate.js"></script>
+<script src="/static/product/scripts/common.js"></script>
+<script>
+    var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+    $(function () {
+        //验证
+        validateInfo();
+        studentSelectInit();
+        lengthSelectInit();
+        subjectSelectInit();
+        classTimeRangeSelectInit();
+        teacherSelectInit();
+    });
+    //表单验证及AJAX提交
+    function validateInfo() {
+        var $thisForm = $('#thisForm');
+        $thisForm.sdvalidate({
+            rules: {
+                Name: {
+                    maxlength: 32,
+                    required: true
+                }
+            },
+            messages: {},
+            submitHandler: function (form) {
+                var url ='{{ urlfor "Teacher/TeacherSubjectController.Edit"}}';
+                var data = $thisForm.serialize();
+                $.sdpost(url,data,function(re){
+                    if(re.code === 0){
+                        parent.layer.msg(re.msg);
+                        parent.refresh(re.obj);
+                        parent.layer.close(index);
+                    }else{
+                        parent.layer.alert(re.msg,{icon:2,title:'失败'})
+                    }
+                });
+                return false;
+            }
+        });
+    }
+
+    function FormSubmit() {
+        $("#thisForm").submit();
+    }
+
+    function studentSelectInit() {
+        var url = '{{urlfor "Student/StudentController.DataList"}}';
+        var $select = $("#Student");
+        $select.html('');
+        $.sdpost(url,{"Status":"1"},function (re) {
+            if(re.code === 0) {
+                var html=['<option value="">   </option>'];
+                $(re.obj).each(function(i,e){
+                    html.push('<option value="' + e.id + '">' + e.name + '</option>')
+                });
+                $select.html(html.join(''));
+                $select.selectpicker({liveSearch:true});
+                $select.selectpicker('val',[]);
+            }else {
+                layer.alert("获取数据失败",{icon:2,title:'失败'})
+            }
+        })
+    }
+    function teacherSelectInit() {
+        var url = '{{urlfor "Teacher/TeacherController.DataList"}}';
+        var $select = $("#Teacher");
+        $select.html('');
+        $.sdpost(url,{"Status":"1"},function (re) {
+            if(re.code === 0) {
+                var html=['<option value="">   </option>'];
+                $(re.obj).each(function(i,e){
+                    html.push('<option value="' + e.id + '">' + e.name + '</option>')
+                });
+                $select.html(html.join(''));
+                $select.selectpicker({liveSearch:true});
+                $select.selectpicker('val',[]);
+            }else {
+                layer.alert("获取数据失败",{icon:2,title:'失败'})
+            }
+        })
+    }
+    function lengthSelectInit() {
+        var $select = $("#Length");
+        $select.html('');
+        var obj = lengthMap;
+        var html=['<option value=""> </option>'];
+        $(obj).each(function(i,e){
+            html.push('<option value="' + e + '">' + e + '</option>')
+        });
+        $select.html(html.join(''));
+        $select.selectpicker({liveSearch:true});
+        $select.selectpicker('val',[]);
+    }
+    function classTimeRangeSelectInit() {
+        var $select = $("#Range");
+        $select.html('');
+        var obj = classTimeRangeMap;
+        var html=['<option value=""> </option>'];
+        $(obj).each(function(i,e){
+            html.push('<option value="' + e + '">' + e + '</option>')
+        });
+        $select.html(html.join(''));
+        $select.selectpicker({liveSearch:true});
+        $select.selectpicker('val',[]);
+    }
+    function subjectSelectInit() {
+        var url = '{{urlfor "Teacher/SubjectController.DataList"}}';
+        var $select = $("#Subject");
+        $select.html('');
+        $.sdpost(url,{},function (re) {
+            if(re.code === 0) {
+                var html=[];
+                $(re.obj).each(function(i,e){
+                    html.push('<option value="' + e.id + '">' + e.name + '</option>')
+                });
+                $select.html(html.join(''));
+                $select.selectpicker({liveSearch:true});
+                $select.selectpicker('val',[]);
+            }else {
+                layer.alert("获取数据失败",{icon:2,title:'失败'})
+            }
+        })
+    }
+    function edit() {
+        var url = '{{urlfor "Class/ClassRecordController.SingleAdd"}}';
+        $thisForm = $("#thisForm");
+        var data = $thisForm.serialize();
+        $.sdpost(url, data, function (re) {
+            if(re.code === 0) {
+                layer.msg(re.msg);
+            }else {
+                layer.alert(re.msg,{icon:2,title:'失败'});
+            }
+        })
+    }
+
+</script>

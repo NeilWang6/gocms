@@ -1,0 +1,13 @@
+<div id=title><h1 class=ch-title>加入我们</h1>
+    <div class=en-title>Recruit Center</div>
+</div>
+
+<section id=container>
+{{range .recruit}}
+    <div class=content>
+        <div class=con-title>{{.Name}}</div>
+        <div class=con-text>{{str2html .Content}}</div>
+
+    </div>
+{{end}}
+</section>

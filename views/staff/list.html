@@ -1,0 +1,26 @@
+<div id=title><h1 class=ch-title>优秀员工</h1>
+    <div class=en-title>Staff List</div>
+</div>
+<section id=scope>
+    <div class=scope-wrapper>
+        <div class="scope-aside">
+            {{range $key,$val := .nav}}
+            <div class="aside-list " onclick="moveUlBar( {{$key}})"><h3>{{$key}}</h3>
+                <ul {{if eq $key "文化教学部"}}style="height: 200px;"{{end}} class="ul-{{$key}}">
+                    {{range $val}}
+                    <li data-id="{{.Id}}" onclick="moveLiSelect(this,{{.Id}})" class="{{if eq .SubjectName "数学"}}select{{end}}">{{.SubjectName}}</li>
+                    {{end}}
+                </ul>
+            </div>
+            {{end}}
+        </div>
+        <div class=scope-content>
+            {{range .staffs}}
+            <div class="content-wrapper {{if eq .Name "崔新"}}show{{end}}" data-id="{{.Id}}">
+                {{str2html .Content}}
+            </div>
+            {{end}}
+        </div>
+
+    </div>
+</section>

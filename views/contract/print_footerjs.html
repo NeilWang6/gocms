@@ -1,0 +1,9 @@
+<script src="/static/product/scripts/common.js"></script>
+<script>
+    window.onload = function test() {
+        var sexName = sexMap[{{.student.Sex}}];
+        var gradeName = gradeMap[{{.student.Grade}}];
+        $("#sex").text(sexName);
+        $("#grade").text(gradeName);
+    }
+</script>

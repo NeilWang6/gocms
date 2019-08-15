@@ -1,0 +1,126 @@
+<div id="ddd">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/static/fronted/image/loginlogo.png">
+
+
+    <p style="text-align:center"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:18.0000pt"><span style="font-family:黑体"><span style="font-family:黑体">墨微教育小班辅导协议</span></span></span></span></span></p>
+
+    <p style="text-align:justify">&nbsp;</p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">甲方：</span></span></span> <span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">上海</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">墨微教育科技</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">有限公司</span></span></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">乙方：</span></span></span> <span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">学生姓名：</span></span></span>{{.student.Name}}<span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-family:宋体">性别：</span></span></span><span id="sex"></span> <span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;<span style="font-family:宋体">年级：</span></span></span> <span id="grade"></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;<span style="font-family:宋体">监护人姓名：</span></span></span> {{.student.Guarder}}<span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;<span style="font-family:宋体">&nbsp;&nbsp;&nbsp;与学生关系：</span></span></span> {{.student.Relate}}<span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;<span style="font-family:宋体">手机：</span></span></span> {{.student.Contact1}}</span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;<span style="font-family:宋体">家庭住址：</span></span></span>{{if ne .student.Adress "未知"}}{{.student.Adress}}{{end}} </span></span></p>
+
+    <p style="text-align:justify">&nbsp;</p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-family:宋体">为全面激发学生的学习兴趣，培养良好的学习习惯，充分挖掘学习潜力，使学生学习方法得到更</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">好的改进，学习能力稳步提高。乙方自愿参加甲方的小班课程，双方本着诚信、自愿、平等的原则为前提，就相关事宜达成如下协议：</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">一、辅导课程与收费</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线">&nbsp;<span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">（一）</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;<span style="font-family:宋体">乙方向甲方交纳的费用标准：</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">1、辅导费用￥</span></span> <span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{.m.Amount}}&nbsp;&nbsp;.0</span></span> <span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">元</span>/小时/</span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">课时</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体">.</span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;<span style="font-family:宋体">（二）</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;<span style="font-family:宋体">辅导计时</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">：</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">科目：</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">（所有开设科目，同一教学模式下通用）</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">教师</span>1对</span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">多</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">面授总计：</span></span></span> <span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;{{.m.Quantity}}&nbsp;&nbsp;.0小时</span></span><span style="font-size:12.0000pt"><span style="font-family:宋体">/课时</span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">。</span></span></span> </span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">辅导期限：自</span></span></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">至</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">（不做限制，按课时扣减）</span></span></span> </span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;<span style="font-family:宋体">（三）</span></span></span>&nbsp;<span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">小班</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">辅导费用</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">：</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">1、乙方应向甲方交纳的费用总计为:</span></span> <span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">￥</span> &nbsp;&nbsp;{{.m.Amount}}&nbsp;&nbsp;.00元</span></span> <span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">，</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">（大写：</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{.chin}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-family:宋体">整）。</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">2、交费记录：</span></span> <span style="font-size:12.0000pt"><span style="font-family:宋体"> &nbsp;&nbsp;{{date .m.CreatedAt "Y"}}&nbsp;年 &nbsp;&nbsp;{{date .m.CreatedAt "m"}}&nbsp;月 &nbsp;{{date .m.CreatedAt "d"}}&nbsp;日现金 &nbsp;&nbsp;&nbsp;&nbsp;{{.m.Amount}}&nbsp;&nbsp;&nbsp;&nbsp;.0元; </span></span></span></span></p>
+
+    <p style="text-align:justify">&nbsp;</p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">二、课程安排</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;1、采取小班教学，每班学员不超过15人。</span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;2、每次课由甲方提供课程讲义资料。</span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;3、每</span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">次课</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">甲方组织回访一次，以便</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">乙方</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">了解孩子学习的效果和教师授课辅导进度。</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;4、乙方监护人需监督乙方按时按量完成</span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">老师</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">规定的作业。</span></span></span></span></span></p>
+
+    <p style="text-align:justify">&nbsp;</p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">三、双方的权利和义务</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;1、甲方负责全部小班课程的组织安排，保证按时按质教授乙方相关课程，保证培训质量。 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;2、甲方负责在安全适宜场所安排教学，保证教学期间乙方在甲方校区内的安全管理。</span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;3、乙方在按时支付相应款项后，有权要求甲方履行约定的义务。</span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;4、乙方有权针对甲方的辅导培训向甲方负责人员提出意见和建议。</span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;5、乙方在接受甲方辅导期间，应遵守甲方的教学秩序。</span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;6、甲方不按时开课的，或甲方教学安排、课程数不符合约定要求的，乙方有权即时向甲方提出意见并要求及时纠正，甲方不予纠正的，乙方有权终止本协议，要求甲方无条件退回剩余课时的款项。</span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线">&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size:12.0000pt"><span style="font-family:宋体">7、乙方在接受甲方辅导期间，应按照甲方制定的课程安排按时上课，遵守甲方的教学秩序，自觉遵守各项规章制度。</span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;8、乙方在第一</span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">节</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">课后，若不适应，可要求甲方退还所有费用。课程开设后，</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">乙方因为已经学习过课</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">程，</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">按课时已产生的费用甲方一律不退。未使用课时，乙方有权无条件要求退还。</span></span></span></span></span></p>
+
+    <p style="text-align:justify">&nbsp;</p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">四、违约责任</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;1、如乙方未按照甲方制定的课程安排按时上课，包括因迟到</span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">或者</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">旷课所导致的损失由乙方承</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">担，甲方不予退还相应课时费用，</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">乙方因特殊原因不能按时上课，需提前</span>24小时告知甲方，否则甲方有权扣除当次课时费。</span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;2、若因乙方个人原因严重影响甲方教学管理规范或者第三人正常接受教育教学权利的，甲方有权解除</span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">本协议，对乙方予以退学处理；若因乙方个人原因造成安全事故产生损失的，甲方有权追究乙方相关责任。</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;3、乙方在辅导授课时间以外发生的安全事故，甲方不予承担责任；乙方在甲方学习期间，若因不可抗</span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">拒因素造成的人身损害的，甲方不承担任何责任。</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;4、因个人原因违反教学规范而引发矛盾造成的安全事故或者致第三人损害的，乙方及其监护人应该承</span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">担全部责任</span>.</span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;5、乙方在甲方学习期间，若因乙方个人原因或第三人的原因造成的疾病或者人身损害及其他意外事故</span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">的，由乙方及其监护人承担全部责任。</span></span></span></span></span></p>
+
+    <p style="text-align:justify">&nbsp;</p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">五、</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;<span style="font-family:宋体">其他约定</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;1、本协议履行过程中发生变更，双方应签订补充协议。甲乙双方权利义务均以此合同文本为准，任</span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">何口头承诺对双方均无约束力。</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;2、未经乙方监护人特别说明，乙方进行的与辅导课程有关的签字确认行为对双方均有约束力，乙方</span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">监护人均确认签字的有效性。</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;3、本协议履行期间产生纠纷，双方应协商解决，协商不成的，双方均有权起诉至甲方所在地人民法</span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">院。</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">4、本协议一式二份，经双方签字盖章后生效，双方各执一份，效力相同。</span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;5、</span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">甲方默认享有使用乙方的成功案例资料在甲方网站、公众号、纸质刊物等平台进行宣传的权利，可以使用的资料包括但不限于：乙方（学生）的个人信息及肖像，学生在教师辅导下完成的作品，及辅导录音、视频等视听资料等，如乙方反对需向甲方提出反对，甲方将本着友好协商的原则，在七日内，撤回所发布的涉及乙方的内容，但对发布所造成的影响和后果不负任何责任（包括无权撤回由其他组织或个人转发、转刊的信息）。</span></span></span></span></span></p>
+
+    <p style="text-align:justify">&nbsp;</p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;<span style="font-family:宋体">甲方：</span></span></span> <span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">上海</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">墨微教育科技</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">有限公司</span></span></span> <span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;乙方（签字）：</span></span></span> </span></span></p>
+
+    <p style="text-align:justify">&nbsp;</p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线">&nbsp;&nbsp;&nbsp;</span></span></p>
+
+    <p style="text-align:justify">&nbsp;</p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;甲方授权代表</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">（签章）</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">：</span></span></span> <span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;乙方监护人（签字）：</span></span></span> </span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线">&nbsp;</span></span></p>
+
+    <p style="text-align:justify">&nbsp;</p>
+
+    <p style="text-align:justify">&nbsp;</p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;日期：</span> &nbsp;&nbsp;</span></span> <span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-family:宋体">日期：</span></span></span> </span></span></p>
+
+
+
+
+</div>

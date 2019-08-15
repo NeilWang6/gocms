@@ -1,0 +1,58 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        合同周统计
+        <small>合同周统计管理</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li>
+            <a href="{{urlfor "HomeController.Index"}}">
+                <i class="fa fa-dashboard"></i> 首页</a>
+        </li>
+        <li class="active">合同周统计</li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content container-fluid">
+    <form id="searchForm" class="searchForm">
+        <div class="box box-solid collapsed-box">
+            <div class="box-header with-border">
+                <input type="date" name="DateStart" class="form-control pull-left input-wd-md">
+                <input type="date" name="DateEnd" class="form-control pull-left input-wd-md">
+                <select name="SchoolId" id="SchoolId" class="form-control pull-left" data-width="150px">
+                </select>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-warning" id="btnSearch" onclick="total()"><i class="fa fa-search"></i> 搜索</button>
+                    <button type="button" class="btn btn-default" id="btnClearSearch"><i class="fa fa-eraser"></i> 清除</button>
+                </div>
+                <div class="box-tools pull-right">
+                    <button id="searchpanelbtn" type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                    </button>
+                </div>
+                <!-- /.box-tools -->
+            </div>
+            <!-- /.box-header -->
+            <!-- /.box-body -->
+        </div>
+    </form>
+    <!-- 页面内容开始 -->
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <i class="fa fa-bar-chart-o"></i>
+
+            <h3 class="box-title">Bar Chart</h3>
+
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+            </div>
+        </div>
+        <div class="box-body">
+            <div id="bar-chart" style="height: 300px; padding: 0px; position: relative;"><canvas class="flot-base" width="510" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 510px; height: 300px;"></canvas><div class="flot-text" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 85px; top: 282px; left: 24px; text-align: center;">January</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 85px; top: 282px; left: 105px; text-align: center;">February</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 85px; top: 282px; left: 197px; text-align: center;">March</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 85px; top: 282px; left: 285px; text-align: center;">April</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 85px; top: 282px; left: 370px; text-align: center;">May</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 85px; top: 282px; left: 452px; text-align: center;">June</div></div><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; top: 269px; left: 7px; text-align: right;">0</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 202px; left: 7px; text-align: right;">5</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 135px; left: 1px; text-align: right;">10</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 68px; left: 1px; text-align: right;">15</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 1px; left: 1px; text-align: right;">20</div></div></div><canvas class="flot-overlay" width="510" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 510px; height: 300px;"></canvas></div>
+        </div>
+        <!-- /.box-body-->
+    </div>
+    <!-- 页面内容结束 -->
+</section>
+<!-- /.content -->

@@ -1,0 +1,38 @@
+<section id="about">
+    <div class="content">
+        <div class="con-title">{{.us.Name}}</div>
+        <div class="con-text">
+            {{str2html .us.Content}}
+            {{/*<div class="about-pic"><img src="" alt="aboutus">*/}}
+            {{/*</div>*/}}
+        </div>
+    </div>
+</section>
+
+<div data-v-cc682da6="" class="content" style="margin:1em auto;padding: 1em">
+    <h3 data-v-cc682da6="" class="title">发展历程</h3>
+    <div data-v-cc682da6="" class="el-divider el-divider--horizontal"><div data-v-cc682da6="" class="el-divider__text is-center"><i data-v-cc682da6="" class="el-icon-collection-tag"></i></div></div> <div data-v-cc682da6="" class="text"><div data-v-cc682da6="" class="block">
+    <ul data-v-cc682da6="" class="el-timeline">
+    {{range .history}}
+        <li data-v-cc682da6="" class="el-timeline-item">
+            <div class="el-timeline-item__tail"></div>
+            <div class="el-timeline-item__node el-timeline-item__node--normal el-timeline-item__node--" style="background-color: rgb(32,156,239);"><!----></div><!---->
+            <div class="el-timeline-item__wrapper">
+                <div class="el-timeline-item__timestamp is-top">
+                {{date .Date "Y/m/d"}}
+                </div>
+                <div class="el-timeline-item__content">
+                    <div data-v-cc682da6="" class="el-card is-always-shadow"><!---->
+                        <div class="el-card__body">
+                        {{str2html .Content}}
+                        </div>
+                    </div>
+                </div><!---->
+            </div>
+        </li>
+    {{end}}
+
+    </ul>
+</div>
+</div>
+</div>

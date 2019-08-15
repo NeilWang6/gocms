@@ -1,0 +1,11 @@
+<div id=title></div>
+<section id=news-wrapper>
+    <div class=news-content>
+        <div class=title><h2>{{ .news.Name }}</h2>
+            <div><span>{{date .news.CreatedAt "Y-m-d"}}</span></div>
+        </div>
+        <div class=content>
+            {{str2html .news.Content}}
+        </div>
+    </div>
+</section>

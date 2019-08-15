@@ -1,0 +1,10 @@
+<section id="recruit">
+    {{range .recruit}}
+    <div class="content">
+        <div class="con-title">{{.Name}}</div>
+        <div class="con-text">
+            {{str2html .Content}}
+        </div>
+    </div>
+    {{end}}
+</section>

@@ -1,0 +1,30 @@
+<div id=title><h1 class=ch-title>新闻中心</h1>
+    <div class=en-title>Press Center</div>
+</div>
+<section id=news-list>
+    <div class=list-wrapper>
+        {{range .news}}
+        <div class=news-con-item>
+            <a href=/news/{{.Id}}>
+                <div class="item_card">
+                    <div class="img"><img src={{.ImageUrl}}></div>
+                    <div class=item_date>
+                        <div class=month>{{date .CreatedAt "m-d"}}</div>
+                        <div class=year>{{date .CreatedAt "Y"}}</div>
+                    </div>
+                    <h3 class=item_title>{{.Name}}</h3>
+                    <div class=item_con><p style="line-height: 1.5em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 13px;"><span style="font-family: arial, helvetica, sans-serif; color: rgb(86, 86, 86); text-align: justify; white-space: normal; background-color: rgb(255, 255, 255);">&nbsp; &nbsp; &nbsp; &nbsp;{{.Content}}</span></span></p></div>
+                </div>
+                <div class=item_more><span>查看详情</span> <i class="iconfont iconqiehuanyou"></i></div>
+            </a>
+        </div>
+        {{end}}
+
+    </div>
+    {{/*<ul class="pagination">*/}}
+        {{/*<li class="disabled"><span>&laquo;</span></li>*/}}
+        {{/*<li class="active"><span>1</span></li>*/}}
+        {{/*<li><a href="/news/?page=2">2</a></li>*/}}
+        {{/*<li><a href="/news/?page=2">&raquo;</a></li>*/}}
+    {{/*</ul>*/}}
+</section>

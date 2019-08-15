@@ -1,0 +1,15 @@
+<section id="news-wrapper">
+    <div class="news-content">
+        <div class="title">
+            <h2>{{.news.Name}}</h2>
+            <div><span>{{date .news.CreatedAt "Y-m-d"}}</span></div>
+        </div>
+        <div class="content">
+            {{str2html .news.Content}}
+        </div>
+    </div>
+    {{/*<div class="news-btn">*/}}
+        {{/*<a href="/m/news/{{.news.Id}}"><span>xxxxx</span></a>*/}}
+        {{/*<a href="javascript:;" style="background: rgb(249, 249, 249); cursor: not-allowed;"><span></span></a>*/}}
+    {{/*</div>*/}}
+</section>

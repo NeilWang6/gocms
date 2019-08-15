@@ -1,0 +1,120 @@
+<div id="ddd">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/static/fronted/image/loginlogo.png">
+
+
+    <p style="text-align:center"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:18.0000pt"><span style="font-family:黑体"><span style="font-family:黑体">墨微教育托管服务协议</span></span></span></span></span></p>
+
+    <p style="text-align:justify">&nbsp;</p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">甲方：</span></span></span> <span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">上海</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">墨微教育科技</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">有限公司</span></span></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">乙方：</span></span></span> <span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">学生姓名：</span></span></span> {{.student.Name}}<span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-family:宋体">性别：</span></span></span> <span id="sex"></span><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;<span style="font-family:宋体">年级：</span></span></span> <span id="grade"></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;<span style="font-family:宋体">监护人姓名：</span></span></span> {{.student.Guarder}}<span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;<span style="font-family:宋体">&nbsp;&nbsp;&nbsp;与学生关系：</span></span></span>{{.student.Relate}} <span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;<span style="font-family:宋体">手机：</span></span></span> {{.student.Contact1}}</span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;<span style="font-family:宋体">家庭住址：</span></span></span>{{if ne .student.Adress "未知"}}{{.student.Adress}}{{end}}  </span></span></p>
+
+    <p style="text-align:justify">&nbsp;</p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线">&nbsp;&nbsp;&nbsp;<span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">经甲乙双方平等协商，就乙方的子女接受甲方提供</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">学生</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">托管服务，约定如下</span>:</span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">一、乙方委托甲方在约定期间对学生的看护及教学管理。甲方应为学生提供安全、适当的学习与生活管理。</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">二、乙方愿意接受本协议所约定的条件及守则，并委托甲方在紧急情况或不能联络乙方时代理乙方对学生做出</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">合理决定，并获得代表乙方签字的权利。</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">三、甲方在学生托管期间负责学生的安全及作业辅导：</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">饮食：可由甲方代订，费用由乙方承担。</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">作业辅导：</span></span></span></span></span></p>
+
+    <p style="text-align:left"><span style="font-size:12pt"><span style="background-color:#ffffff"><span style="font-family:&quot;Times New Roman&quot;"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="color:#393939">1、负责每天督促学生完成作业。</span></span></span></span></span></span></p>
+
+    <p style="text-align:left"><span style="font-size:12pt"><span style="background-color:#ffffff"><span style="font-family:&quot;Times New Roman&quot;"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="color:#393939">2、推荐合适的教辅资料并督促学生及时完成，逐渐养成良好的学习习惯。</span></span></span></span></span></span></p>
+
+    <p style="text-align:left"><span style="font-size:12pt"><span style="background-color:#ffffff"><span style="font-family:&quot;Times New Roman&quot;"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="color:#393939">3、课内作业进行检查核对，课外作业对照答案判对错。</span></span></span></span></span></span></p>
+
+    <p style="text-align:left"><span style="font-size:12pt"><span style="background-color:#ffffff"><span style="font-family:&quot;Times New Roman&quot;"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="color:#393939">4、适当对孩子作业错题进行辅导，如需针对性辅导请另报课程。</span></span></span></span></span></span></p>
+
+    <p style="text-align:left"><span style="font-size:12pt"><span style="background-color:#ffffff"><span style="font-family:&quot;Times New Roman&quot;"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="color:#393939">5、所有托班服务对孩子成绩不负任何责任。</span></span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">四、托管期限：自</span></span></span> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">至</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">（不做限制，按课时扣减）</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">，期满后双方如续约，应重新签订协议。</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">五、托管费：</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">费用标准：</span></span></span> <span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">元</span>/</span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">周</span>/课时</span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">，托管时间：</span> &nbsp;&nbsp;{{.m.Quantity}}&nbsp;</span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">周</span>/课时</span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">，</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">合计：</span></span></span> &nbsp;&nbsp;&nbsp;{{.m.Amount}}&nbsp; &nbsp;&nbsp;<span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">元，</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">（大写：</span></span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{.chin}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;<span style="font-family:宋体">整）。</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">缴费记录：</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体">{{date .m.CreatedAt "Y"}}&nbsp;&nbsp;年 &nbsp;{{date .m.CreatedAt "m"}}&nbsp;月 &nbsp;{{date .m.CreatedAt "d"}}&nbsp;日现金 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{.m.Amount}}&nbsp;&nbsp;&nbsp;.0元;</span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">六、乙方应配合甲方为学生创造良好的学习条件和氛围，教育学生遵守托管期间的有关规定，学生在</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">托管期间不得自行外出、擅自脱离甲方监管，否则因此导致学生人身伤害的，由乙方承担全部责任。因下列原因或者学生擅自脱离监管发生意外事故而致人身或者财产损失的，甲方不承担赔偿责任：</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;1、地震、雷击、台风、洪水等不可抗拒的自然因素造成的；</span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;2、来自与学生寄宿地点外部的突发性、偶发性或第三方侵害造成的；</span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;3、学生有特异体质、特定疾病或者异常心理状态；</span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;4、学生在校期间发生意外伤害的；</span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;5、学生自杀、自伤的； &nbsp;&nbsp;</span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;6、其它意外因素造成的。</span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">七、甲方应提供安全的学习环境，确保学生在托管期间进行有效监管。对因提供条件不当、甲方故意</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">或重大过失未能履行合理限度范围内的监管义务，造成学生财产或人身损害的，甲方应当承担相应赔偿责任。</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">八、如学生不服从甲方教育管理规定擅自外出或打架斗殴对他人或自身造成伤害的，其造成的后果由乙方自行</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">承担。</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">九、乙方应配合甲方教育学生保管好个人钱物，非甲方原因，导致学生物品丢失，甲方应积极为乙方寻找，</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">但甲方不承担经济赔偿责任。</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">十、学生在作业吧及托管期间若出现较重疾病和其他需要紧急救助情况，甲方应及时告知乙方，乙方应积</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">极救助。如情况紧急，甲方应及时将学生送往医疗机构救治。在本协议签订之前，甲方应如实介绍所能提供的各种条件，不得对乙方做出任何不符合事实的宣传和评价，如果由此造成学生不良影响，甲方应承担相应责任。</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">十一、在本协议签订之前，甲方应如实介绍所能提供的服务条件，不得对乙方做出任何不符合事实的宣传</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">和评价，如果由此造成学生不良影响，甲方应承担相应责任。</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">十二、乙方对甲方服务不满意或因其他原因可解除本协议，其费用按周结算，不足半周的按整周计</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">算。学生有下列行为之一的，甲方有权终止协议，费用实际</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">周</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">数结算。学生造成甲方或第三人人身财产损失的，乙方应承担相应赔偿责任；</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;1、不听从甲方管理，经教育无悔改表现的；</span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;2、故意伤害其他学生并造成严重后果的；</span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;3、故意损毁甲方财物并造成巨大损失的；</span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;4、偷盗钱物无悔改表现的；</span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;5、其他导致作业吧及托管协议不能履行的行为。</span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">十三、乙方应积极主动地保持与甲方的联系和配合，乙方如发生住址、单位、电话联系方式的变更应及时</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">告知甲方。甲方应将学生托管期间的表现与变化情况充分告知乙方，配合乙方确定学生的教育方案。</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">十四、本协议履行过程中产生争议的，双方应协商解决，协商不成的，双方均有权起诉至甲方所在的人民</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">法院。</span></span></span></span></span></p>
+
+    <p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">十五、本协议一式两份，经双方签字盖章后生效，双方各执一份，效力相同。</span></span></span></span></span></p>
+
+    <p style="text-align:left">&nbsp;</p>
+
+    <p style="text-align:left">&nbsp;</p>
+
+    <p style="text-align:left">&nbsp;</p>
+
+    <p style="text-align:left"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">甲方（学校）：</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-family:宋体">乙方（家长）：</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span></span></p>
+
+    <p style="text-align:right">&nbsp;</p>
+
+    <p style="text-align:right">&nbsp;</p>
+
+    <p style="text-align:right">&nbsp;</p>
+
+    <p style="text-align:right">&nbsp;</p>
+
+    <p style="text-align:right">&nbsp;</p>
+
+    <p style="text-align:right"><span style="font-size:10.5pt"><span style="font-family:等线">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+
+    <p style="text-align:right">&nbsp;</p>
+
+    <p style="text-align:right"><span style="font-size:10.5pt"><span style="font-family:等线"><span style="font-size:12.0000pt"><span style="font-family:宋体">______ 年_____</span></span><span style="font-size:12.0000pt"><span style="font-family:宋体"><span style="font-family:宋体">月</span></span></span><span style="font-size:12.0000pt"><span style="font-family:宋体">______日</span></span></span></span></p>
+
+
+
+
+</div>

@@ -1,0 +1,37 @@
+<form id="thisForm">
+    <input type="hidden" name="Id" id="Id" value="{{.m.Id}}">
+    <input type="hidden" name="SchoolId" id="SchoolId" value="{{.m.School.Id}}">
+    <input type="hidden" name="Type" id="Type" value="1">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>班组名</label>
+                <input type="text" name="Name" class="form-control" placeholder="班组名" value="{{.m.Name}}">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>创建时间</label>
+                <input {{if eq .m.Id 0}}disabled="disabled" {{end}} name="CreatedAt" id="CreatedAt" class="form-control time" placeholder="创建时间" value="{{.m.CreatedAt}}">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>选择学生</label>
+                <select name="GroupId[]" id="GroupId" class="form-control" multiple>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>状态</label>
+                <select name="Status" id="Status" class="form-control ">
+                </select>
+            </div>
+        </div>
+    </div>
+
+</form>
+</div>

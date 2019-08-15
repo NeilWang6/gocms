@@ -1,0 +1,99 @@
+<form id="thisForm">
+    <input type="hidden" name="Id" id="Id" value="{{.m.Id}}">
+    <input type="hidden" name="Type" id="Type" value="0">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>学生姓名</label>
+                <input type="text" name="Name" class="form-control" placeholder="学生姓名" value="{{.m.Name}}">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>学生编号</label>
+                <input type="text" name="Code" disabled="disabled" class="form-control" placeholder="学生编号" value="{{.m.Code}}">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>性别</label>
+                <select name="Sex" id="Sex" class="form-control bs-select">
+                    <option value="1">男</option>
+                    <option value="2">女</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>年级</label>
+                <select name="Grade" id="Grade" class="form-control">
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>监护人</label>
+                <input type="text" name="Guarder" class="form-control" placeholder="" value="{{.m.Guarder}}">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>监护关系</label>
+                <select name="Relate" id="Relate" class="form-control">
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>联系方式</label>
+                <input type="text" name="Contact1" class="form-control" placeholder="" value="{{.m.Contact1}}">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>地址</label>
+                <select name="Adress" id="Adress" class="form-control">
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>校区</label>
+                <select name="SchoolId" id="School" class="form-control">
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>学生学校</label>
+                <select name="StudentSchoolId" id="StudentSchoolId" class="form-control">
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>备注</label>
+                <input type="text" name="Note" class="form-control" placeholder="备注信息" value="{{.m.Note}}">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>状态</label>
+                <select name="Status" id="Status" class="form-control ">
+                </select>
+            </div>
+        </div>
+    </div>
+
+</form>
+</div>

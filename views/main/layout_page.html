@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset=UTF-8>
+    <meta name=viewport content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv=X-UA-Compatible content="ie=edge">
+    <title>墨微教育-关心关注每一个孩子的成长</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="baidu-site-verification" content="HWVD1NjUi9" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    {{.headcssjs}}
+    <script src="/static/fronted/js/jquery-3.3.1.min.js"></script>
+    <script src=/static/fronted/js/owl.carousel.min.js></script>
+    <script src=/static/fronted/js/sly.min.js></script>
+    <script src=/static/fronted/js/countup.min.js></script>
+    <script src=/static/fronted/js/wow.min.js></script>
+    <script>
+        var userAgentInfo = navigator.userAgent;
+        var Agents = ["Android", "iPhone",
+            "SymbianOS", "Windows Phone",
+            "iPad", "iPod"];
+        var flag = true;
+        for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                flag = false;
+                break;
+            }
+        }
+        if (flag === false) {
+            var url = document.location.host;
+            var href = document.location.href;
+            if (href.match("/m/")) {
+            }
+            var newUrl = href.replace(url, url + "/m");
+            console.log(newUrl);
+            window.location.href = newUrl;
+        }
+    </script>
+</head>
+<body>
+<header id=header>
+    <div class=header-wrapper>
+        <div class=logo>
+            <a href="/"/><img src="/static/fronted/image/logo.png" alt=墨微教育></a>
+            <a href="/"><img src="/static/fronted/image/logo.png" alt=墨微教育></a>
+            <h1>墨微教育</h1></div>
+        <ul class=nav>
+            <li class="nav-item {{if eq .cont "MainController"}}active{{end}}">
+                <a href="/index">首页</a>
+            </li>
+            <li class="nav-item {{if eq .cont "UsController"}}active{{end}}">
+                <a href="/us">关于我们</a>
+            </li>
+            <li class="nav-item {{if eq .cont "StaffController"}}active{{end}}">
+                <a href="/staff">优秀员工</a>
+            </li>
+            <li class="nav-item {{if eq .cont "ProjectController"}}active{{end}}">
+                <a href="/project">培训项目</a>
+            </li>
+            <li class="nav-item {{if eq .cont "RecruitController"}}active{{end}}">
+                <a href="/recruit">加入我们</a>
+            </li>
+            <li class="nav-item {{if eq .cont "NewsController"}}active{{end}}">
+                <a href="/news">新闻中心</a>
+            </li>
+            <li class="nav-item {{if eq .cont "HomeController"}}active{{end}}">
+                <a href="/home/login ">教师系统</a>
+            </li>
+            <li class="move-bar"></li>
+        </ul>
+        <div class="en">
+            {{/*<a href="http://www.onesmart.investorroom.com/">English</a>*/}}
+        </div>
+    </div>
+</header>
+
+
+{{.LayoutContent}}
+
+
+
+<footer id=footer>
+    <div class=footer-wrapper>
+        <div class=footer-content>
+            <div class=footer-logo><img src="/static/fronted/image/loginlogo.png" alt=logo></div>
+            <div class=footer-contact>
+                <div class=tel>
+                    <i class="iconfont icondianhua"></i>
+                    <span class=text>联系电话</span>
+                    <span class=tel_num>021 60194838</span>
+                </div>
+                <div class=add>
+                    <i class="iconfont icondizhi"></i>
+                    <span class=text>公司地址</span>
+                    <span class=add_details>上海市杨浦区588号</span>
+                </div>
+            </div>
+            <div class=qrcode>
+                <div class=left><span>扫描右侧二维码<br />关注微信公众号</span><span>获取更多资讯</span></div>
+                <div class=right><img src="/static/fronted/image/qrcode.jpg"></div>
+            </div>
+        </div>
+        <div class=footer-copyright>
+            <span>COPY-RIGHT©2017-2019 墨微教育</span>
+            <a rel=nofllow href=http://beian.miit.gov.cn target=_blank>沪ICP备18008992号</a>
+            <a  style="margin-right:0px" target="_blank"><i class="iconfont iconuemologo1"></i></a>
+            {{/*<a href="http://www.uemox.com"target="_blank" >技术支持</a>*/}}
+            {{/*<a target=_blank>沪公网安备 31010702001998号</a>*/}}
+        </div>
+    </div>
+</footer>
+<script src=/static/fronted/js/index.js></script>
+</body>
+</html>
+
