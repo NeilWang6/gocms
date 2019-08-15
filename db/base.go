@@ -1,8 +1,8 @@
 package db
 
 import (
-	"adsgoscr.xinxin.com/conf"
 	"fmt"
+	"github.com/astaxie/beego"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
 )
@@ -11,10 +11,10 @@ var DB *gorm.DB
 
 func init() {
 	config := fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8&parseTime=True&loc=Local",
-		c.String("dsp.mysqluser"),
-		c.String("dsp.mysqlpass"),
-		c.String("dsp.mysqlurls"),
-		c.String("dsp.mysqldb"),
+		beego.AppConfig.String("mysql::db_user"),
+		beego.AppConfig.String("mysql::db_pwd"),
+		beego.AppConfig.String("mysql::db_name"),
+		beego.AppConfig.String("mysql::db_host"),
 	)
 	//config := "root:root@/db_center?charset=utf8&parseTime=True&loc=Local"
 	db, err := gorm.Open("mysql", config)
@@ -29,8 +29,7 @@ func init() {
 }
 
 func LogState() bool {
-	c, _ := conf.NewFileConf("conf/app.conf")
-	if c.String("env.runmode") == "prod" {
+	if beego.AppConfig.String("runmode") == "prod" {
 		return false
 	}
 	return true
