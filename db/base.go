@@ -20,6 +20,7 @@ func init() {
 	db, err := gorm.Open("mysql", config)
 	db.LogMode(LogState())
 	db.DB().SetMaxIdleConns(10)
+	//db.AutoMigrate()
 	//db.DB().SetMaxOpenConns(100)
 	if err != nil {
 		fmt.Println("DB连接失败", err.Error())
