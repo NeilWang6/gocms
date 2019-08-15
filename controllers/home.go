@@ -2,8 +2,8 @@ package controllers
 
 import (
 	"github.com/astaxie/beego/orm"
-	"gocms/models/Student"
-	"gocms/models/Teacher"
+	"gocms/models/student"
+	"gocms/models/teacher"
 	"strings"
 	"time"
 
@@ -19,7 +19,47 @@ type HomeController struct {
 func (c *HomeController) Index() {
 	//判断是否登录
 	c.checkLogin()
-
+	/*克隆上个月的支出*/
+	first := utils.GetFirstDateOfMonth(time.Now())
+	firstDate := first.Format("2006-01-02")
+	m := &teacher.Expend{}
+	err := orm.NewOrm().QueryTable(models.ExpendTBName()).Filter("month", firstDate).One(m)
+	if err != nil { // 没有结果
+		pre := []*teacher.Expend{}
+		preDate := utils.GetPreFirstDateOfMonth(time.Now())
+		preFirstDate := preDate.Format("2006-01-02")
+		orm.NewOrm().QueryTable(models.ExpendTBName()).Filter("month", preFirstDate).All(&pre)
+		for _, val := range pre {
+			val.Month = firstDate
+			val.Id = 0
+			orm.NewOrm().Insert(val)
+		}
+	}
+	/*克隆上个月的支出*/
+	/*合同单价默认添加*/
+	schools := make([]student.School, 0)
+	orm.NewOrm().QueryTable(models.SchoolTBName()).All(&schools)
+	for _, val := range schools {
+		num, _ := orm.NewOrm().QueryTable(models.ContractPriceTBName()).Filter("school_id", val.Id).Count()
+		if num == 6 {
+			continue
+		} else if num < 6 && num > 0 {
+			orm.NewOrm().QueryTable(models.ContractPriceTBName()).Filter("school_id", val.Id).Delete()
+		}
+		m1 := student.ContractPrice{Type: student.ContractTypeYi, SchoolId: val.Id}
+		m2 := student.ContractPrice{Type: student.ContractTypeXiao, SchoolId: val.Id}
+		m1mul := make([]student.ContractPrice, 0)
+		m1mul = append(m1mul, m1)
+		m1mul = append(m1mul, m1)
+		m1mul = append(m1mul, m1)
+		m2mul := make([]student.ContractPrice, 0)
+		m2mul = append(m2mul, m2)
+		m2mul = append(m2mul, m2)
+		m2mul = append(m2mul, m2)
+		orm.NewOrm().InsertMulti(3, m1mul)
+		orm.NewOrm().InsertMulti(3, m2mul)
+	}
+	/*合同单价默认添加*/
 	c.SetTpl()
 }
 func (c *HomeController) Page404() {

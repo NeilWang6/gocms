@@ -19,6 +19,7 @@ type BaseController struct {
 }
 
 func (c *BaseController) Prepare() {
+	//附值
 	c.ControllerName, c.ActionName = c.GetControllerAndAction()
 	//从Session里获取数据 设置用户信息
 	c.adapterUserInfo()
