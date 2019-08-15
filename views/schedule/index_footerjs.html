@@ -24,7 +24,7 @@
             },
             messages: {},
             submitHandler: function (form) {
-                var url ='{{ urlfor "Teacher/TeacherSubjectController.Edit"}}';
+                var url ='{{ urlfor "teacher/TeacherSubjectController.Edit"}}';
                 var data = $thisForm.serialize();
                 $.sdpost(url,data,function(re){
                     if(re.code === 0){
@@ -46,7 +46,7 @@
 
     function studentSelectInit(ths, selecteds) {
         console.log(selecteds);
-        var url = '{{urlfor "Student/StudentController.DataList"}}';
+        var url = '{{urlfor "student/StudentController.DataList"}}';
         var $select = $(ths);
         $select.html('');
         $.sdpost(url,{"Status":"1","Type":100},function (re) {
@@ -79,7 +79,7 @@
     function edit(id) {
         console.log(id);
         $thisForm = $('#'+id);
-        var url ='{{ urlfor "Class/ScheduleController.Edit"}}';
+        var url ='{{ urlfor "class/ScheduleController.Edit"}}';
         var data = $thisForm.serialize();
         $.sdpost(url,data,function(re){
             if(re.code === 0){
@@ -93,7 +93,7 @@
         return false;
     }
     function clearClass(id) {
-        var url ='{{ urlfor "Class/ScheduleController.Clear"}}';
+        var url ='{{ urlfor "class/ScheduleController.Clear"}}';
         layer.confirm('您是否确认清空该排课记录？', {
             btn: ['是', '否'], icon: 3, title: '请确认'
         }, function () {

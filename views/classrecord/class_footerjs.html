@@ -28,14 +28,14 @@
      * DONUT CHART
      */
     function total() {
-        var url = '{{ urlfor "Class/ClassRecordController.ClassData"}}';
+        var url = '{{ urlfor "class/ClassRecordController.ClassData"}}';
         var data = $("#searchForm").serialize();
         $.sdpost(url, data, function (re) {
             var donutData = re.obj.obj;
             var donutDataLength = re.obj.obj1;
             totalDetail(donutData,'detail-ul');
             totalDetail(donutDataLength,'detail-ul-length');
-            $(".Student").html(re.obj.count);
+            $(".student").html(re.obj.count);
             $(".StudentLength").html(re.obj.length);
             if (donutData.length > 0) {
                 $.plot("#donut-chart", donutData, {
@@ -104,7 +104,7 @@
     }
     // 校区下拉框初始化
     function schoolSelectInit() {
-        var url = '{{urlfor "Student/SchoolController.DataList"}}';
+        var url = '{{urlfor "student/SchoolController.DataList"}}';
         var $select = $("#SchoolId");
         $select.html('');
         $.sdpost(url,{},function (re) {

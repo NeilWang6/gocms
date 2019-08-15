@@ -24,7 +24,7 @@
             },
             messages: {},
             submitHandler: function (form) {
-                var url ='{{ urlfor "Teacher/TeacherSubjectController.Edit"}}';
+                var url ='{{ urlfor "teacher/TeacherSubjectController.Edit"}}';
                 var data = $thisForm.serialize();
                 $.sdpost(url,data,function(re){
                     if(re.code === 0){
@@ -46,7 +46,7 @@
 
     function studentSelectInit(ths, selecteds) {
         console.log(selecteds);
-        var url = '{{urlfor "Student/StudentController.DataList"}}';
+        var url = '{{urlfor "student/StudentController.DataList"}}';
         var $select = $(ths);
         $select.html('');
         $.sdpost(url,{"Status":"1"},function (re) {
@@ -153,7 +153,7 @@
         } if (data['Grade120'] <= 0) {
             parent.layer.msg('高三单价不能为空');return false;
         }
-        var url ='{{ urlfor "Student/ContractPriceController.Edit"}}';
+        var url ='{{ urlfor "student/ContractPriceController.Edit"}}';
         $.sdpost(url,data,function(re){
             if(re.code === 0){
                 parent.layer.msg(re.msg);

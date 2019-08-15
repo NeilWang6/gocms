@@ -27,7 +27,7 @@
             },
             messages: {},
             submitHandler: function (form) {
-				var url ='{{ urlfor "FrontedManage/UsController.Edit"}}';
+				var url ='{{ urlfor "fronted_manage/UsController.Edit"}}';
 				//var data = $thisForm.serialize();
                 var content = CKEDITOR.instances.editor1.getData();
                 var name = $("#Name").val();

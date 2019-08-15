@@ -21,7 +21,7 @@
             },
             messages: {},
             submitHandler: function (form) {
-				var url ='{{ urlfor "Student/StudentAreaController.Edit"}}';
+				var url ='{{ urlfor "student/StudentAreaController.Edit"}}';
 				var data = $thisForm.serialize();				
 				$.sdpost(url,data,function(re){
 					if(re.code === 0){

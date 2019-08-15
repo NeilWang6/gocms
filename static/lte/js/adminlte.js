@@ -49,7 +49,7 @@ throw new Error('AdminLTE requires jQuery')
     data: '[data-widget="box-refresh"]'
   };
 
-  // BoxRefresh Class Definition
+  // BoxRefresh class Definition
   // =========================
   var BoxRefresh = function (element, options) {
     this.element  = element;
@@ -179,7 +179,7 @@ throw new Error('AdminLTE requires jQuery')
     removed  : 'removed.boxwidget'
   };
 
-  // BoxWidget Class Definition
+  // BoxWidget class Definition
   // =====================
   var BoxWidget = function (element, options) {
     this.element = element;
@@ -344,7 +344,7 @@ throw new Error('AdminLTE requires jQuery')
     expanded : 'expanded.controlsidebar'
   };
 
-  // ControlSidebar Class Definition
+  // ControlSidebar class Definition
   // ===============================
   var ControlSidebar = function (element, options) {
     this.element         = element;
@@ -468,7 +468,7 @@ throw new Error('AdminLTE requires jQuery')
     open: 'direct-chat-contacts-open'
   };
 
-  // DirectChat Class Definition
+  // DirectChat class Definition
   // ===========================
   var DirectChat = function (element) {
     this.element = element;
@@ -739,7 +739,7 @@ throw new Error('AdminLTE requires jQuery')
     collapsed: 'collapsed.pushMenu'
   };
 
-  // PushMenu Class Definition
+  // PushMenu class Definition
   // =========================
   var PushMenu = function (options) {
     this.options = options;
@@ -902,7 +902,7 @@ throw new Error('AdminLTE requires jQuery')
     done: 'done'
   };
 
-  // TodoList Class Definition
+  // TodoList class Definition
   // =========================
   var TodoList = function (element, options) {
     this.element = element;
@@ -1023,7 +1023,7 @@ throw new Error('AdminLTE requires jQuery')
     expanded : 'expanded.tree'
   };
 
-  // Tree Class Definition
+  // Tree class Definition
   // =====================
   var Tree = function (element, options) {
     this.element = element;

@@ -63,7 +63,7 @@
      * DONUT CHART
      */
     function total() {
-        var url = '{{ urlfor "Class/ClassRecordController.ClassWeekData"}}';
+        var url = '{{ urlfor "class/ClassRecordController.ClassWeekData"}}';
         var data = $("#searchForm").serialize();
         $.sdpost(url, data, function (re) {
             var bar_data = {data:re.obj.lengthObj, color:"#3c8dbc"};
@@ -105,7 +105,7 @@
     }
     // 校区下拉框初始化
     function schoolSelectInit() {
-        var url = '{{urlfor "Student/SchoolController.DataList"}}';
+        var url = '{{urlfor "student/SchoolController.DataList"}}';
         var $select = $("#SchoolId");
         $select.html('');
         $.sdpost(url,{},function (re) {

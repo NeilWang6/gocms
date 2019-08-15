@@ -59,7 +59,7 @@
     //bootstrap table data init
     function dataGridInit() {
         $dataGrid.bootstrapTable({
-            url: '{{ urlfor "FrontedManage/StaffController.DataGrid"}}',
+            url: '{{ urlfor "fronted_manage/StaffController.DataGrid"}}',
             method: 'post',
             sidePagination: 'server', //服务器端用 server
             idField: 'Id',
@@ -177,7 +177,7 @@
         if (Id > 0) {
             title = "编辑员工"
         }
-        var url = '{{ urlfor "FrontedManage/StaffController.Edit"}}' + '/' + Id;
+        var url = '{{ urlfor "fronted_manage/StaffController.Edit"}}' + '/' + Id;
         layer.open({
             type: 2,
             title: title,
@@ -196,7 +196,7 @@
     }
 
     function DeleteFun() {
-        var url = '{{ urlfor "FrontedManage/StaffController.Delete"}}';
+        var url = '{{ urlfor "fronted_manage/StaffController.Delete"}}';
         var rows = $dataGrid.bootstrapTable("getSelections");
         if (rows.length === 0) {
             layer.alert('请选择想要删除的项', {icon: 0, title: '提示'});

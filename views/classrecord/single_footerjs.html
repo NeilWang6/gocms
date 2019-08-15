@@ -27,7 +27,7 @@
             },
             messages: {},
             submitHandler: function (form) {
-                var url ='{{ urlfor "Teacher/TeacherSubjectController.Edit"}}';
+                var url ='{{ urlfor "teacher/TeacherSubjectController.Edit"}}';
                 var data = $thisForm.serialize();
                 $.sdpost(url,data,function(re){
                     if(re.code === 0){
@@ -48,8 +48,8 @@
     }
 
     function studentSelectInit() {
-        var url = '{{urlfor "Student/StudentController.DataList"}}';
-        var $select = $("#Student");
+        var url = '{{urlfor "student/StudentController.DataList"}}';
+        var $select = $("#student");
         $select.html('');
         $.sdpost(url,{"Status":"1"},function (re) {
             if(re.code === 0) {
@@ -66,8 +66,8 @@
         })
     }
     function teacherSelectInit() {
-        var url = '{{urlfor "Teacher/TeacherController.DataList"}}';
-        var $select = $("#Teacher");
+        var url = '{{urlfor "teacher/TeacherController.DataList"}}';
+        var $select = $("#teacher");
         $select.html('');
         $.sdpost(url,{"Status":"1"},function (re) {
             if(re.code === 0) {
@@ -108,7 +108,7 @@
         $select.selectpicker('val',[]);
     }
     function subjectSelectInit() {
-        var url = '{{urlfor "Teacher/SubjectController.DataList"}}';
+        var url = '{{urlfor "teacher/SubjectController.DataList"}}';
         var $select = $("#Subject");
         $select.html('');
         $.sdpost(url,{},function (re) {
@@ -126,7 +126,7 @@
         })
     }
     function edit() {
-        var url = '{{urlfor "Class/ClassRecordController.SingleAdd"}}';
+        var url = '{{urlfor "class/ClassRecordController.SingleAdd"}}';
         $thisForm = $("#thisForm");
         var data = $thisForm.serialize();
         $.sdpost(url, data, function (re) {

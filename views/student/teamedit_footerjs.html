@@ -25,7 +25,7 @@
         }else {
             var arrSelected = JSON.parse(selecteds);
         }
-        var url = '{{urlfor "Student/StudentController.DataList"}}';
+        var url = '{{urlfor "student/StudentController.DataList"}}';
         var $select = $("#GroupId");
         $select.html('');
         $.sdpost(url,{"Type":"0","Balance2":"0"},function (re) {

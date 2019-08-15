@@ -20,7 +20,7 @@
     }
     // 校区下拉框初始化
     function schoolSelectInit(selecteds) {
-        var url = '{{urlfor "Student/SchoolController.DataList"}}';
+        var url = '{{urlfor "student/SchoolController.DataList"}}';
         var $select = $("#School");
         $select.html('');
         $.sdpost(url,{},function (re) {
@@ -154,7 +154,7 @@
                 },
             },
             submitHandler: function (form) {
-				var url ='{{ urlfor "Student/ContractController.Edit"}}';
+				var url ='{{ urlfor "student/ContractController.Edit"}}';
 				var price = $("#Price").val();
 				var data = $thisForm.serialize();
 				data += "&Price="+price;
@@ -177,7 +177,7 @@
     }
     function searchStudent() {
         var code = document.getElementById("Code").value;
-        var url = '{{ urlfor "Student/StudentController.Search" }}';
+        var url = '{{ urlfor "student/StudentController.Search" }}';
         var data = {"Code":code};
         $.sdget(url,data,function (re) {
             if(re.code === 0) {
@@ -190,7 +190,7 @@
         })
     }
     function searchPrice() {
-        var url = '{{ urlfor "Student/ContractPriceController.Search" }}';
+        var url = '{{ urlfor "student/ContractPriceController.Search" }}';
         var grade = document.getElementById("Grade").value;
         var schoolId = document.getElementById("SchoolId").value;
         var type = $("#Type").val();

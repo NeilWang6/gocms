@@ -28,12 +28,12 @@
      * DONUT CHART
      */
     function total() {
-        var url = '{{ urlfor "Student/ContractController.TotalData"}}';
+        var url = '{{ urlfor "student/ContractController.TotalData"}}';
         var data = $("#searchForm").serialize();
         $.sdpost(url, data, function (re) {
             var donutData = re.obj.Valid;
             var donutDataBack = re.obj.Back;
-            $(".Student").html(re.obj.Count);
+            $(".student").html(re.obj.Count);
             $(".StudentBack").html(re.obj.BackCount);
             totalDetail(re.obj.Valid,'detail-ul');
             totalDetail(re.obj.Back,'detail-ul-back');
@@ -104,7 +104,7 @@
     }
     // 校区下拉框初始化
     function schoolSelectInit() {
-        var url = '{{urlfor "Student/SchoolController.DataList"}}';
+        var url = '{{urlfor "student/SchoolController.DataList"}}';
         var $select = $("#SchoolId");
         $select.html('');
         $.sdpost(url,{},function (re) {

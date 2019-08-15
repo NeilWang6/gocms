@@ -31,7 +31,7 @@
             },
             messages: {},
             submitHandler: function (form) {
-				var url ='{{ urlfor "Teacher/ExpendController.Edit"}}';
+				var url ='{{ urlfor "teacher/ExpendController.Edit"}}';
 				var data = $thisForm.serialize();
 				$.sdpost(url,data,function(re){
 					if(re.code === 0){
@@ -52,7 +52,7 @@
     }
     // 校区下拉框初始化
     function schoolSelectInit() {
-        var url = '{{urlfor "Student/SchoolController.DataList"}}';
+        var url = '{{urlfor "student/SchoolController.DataList"}}';
         var $select = $("#SchoolId");
         $select.html('');
         $.sdpost(url,{},function (re) {

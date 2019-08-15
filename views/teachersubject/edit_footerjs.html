@@ -22,7 +22,7 @@
             },
             messages: {},
             submitHandler: function (form) {
-				var url ='{{ urlfor "Teacher/TeacherSubjectController.Edit"}}';
+				var url ='{{ urlfor "teacher/TeacherSubjectController.Edit"}}';
 				var data = $thisForm.serialize();				
 				$.sdpost(url,data,function(re){
 					if(re.code === 0){
@@ -46,7 +46,7 @@
         if (selecteds.length != 0) {
             selecteds = JSON.parse(selecteds);
         }
-        var url = '{{urlfor "Teacher/SubjectController.DataList"}}';
+        var url = '{{urlfor "teacher/SubjectController.DataList"}}';
         var $select = $("#Subject");
         $select.html('');
         $.sdpost(url,{},function (re) {

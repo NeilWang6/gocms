@@ -19,7 +19,7 @@
     }
     // 校区下拉框初始化
     function schoolSelectInit(selecteds) {
-        var url = '{{urlfor "Student/SchoolController.DataList"}}';
+        var url = '{{urlfor "student/SchoolController.DataList"}}';
         var $select = $("#School");
         $select.html('');
         $.sdpost(url,{},function (re) {
@@ -232,7 +232,7 @@
                 },
             },
             submitHandler: function (form) {
-				var url ='{{ urlfor " Teacher/TeacherController.Edit"}}';
+				var url ='{{ urlfor " teacher/TeacherController.Edit"}}';
 				var data = $thisForm.serialize();				
 				$.sdpost(url,data,function(re){
 					if(re.code === 0){

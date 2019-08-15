@@ -28,7 +28,7 @@
      * DONUT CHART
      */
     function total() {
-        var url = '{{ urlfor "Student/StudentController.TotalData"}}';
+        var url = '{{ urlfor "student/StudentController.TotalData"}}';
         var data = $("#searchForm").serialize();
         $.sdpost(url, data, function (re) {
             totalDetail(re.obj.Status,'detail-ul');
@@ -43,7 +43,7 @@
             var donutDataGrade = re.obj.Grade;
             var donutDataContract = re.obj.Contract;
             var donutDataRelate = re.obj.Relate;
-            $(".Student").html(re.obj.Count);
+            $(".student").html(re.obj.Count);
             if (donutData.length > 0) {
                 $.plot("#donut-chart", donutData, {
                     series: {
@@ -194,7 +194,7 @@
     }
     // 校区下拉框初始化
     function schoolSelectInit() {
-        var url = '{{urlfor "Student/SchoolController.DataList"}}';
+        var url = '{{urlfor "student/SchoolController.DataList"}}';
         var $select = $("#SchoolId");
         $select.html('');
         $.sdpost(url,{},function (re) {

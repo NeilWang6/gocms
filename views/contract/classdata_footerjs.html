@@ -27,7 +27,7 @@
      * DONUT CHART
      */
     function total() {
-        var url = '{{ urlfor "Class/ClassRecordController.ClassDataGrid"}}';
+        var url = '{{ urlfor "class/ClassRecordController.ClassDataGrid"}}';
         var data = $("#searchForm").serialize();
         $.sdpost(url, data, function (re) {
             var donutData = re.obj.Valid;

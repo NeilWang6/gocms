@@ -67,7 +67,7 @@
     //bootstrap table data init
     function dataGridInit() {
         $dataGrid.bootstrapTable({
-            url: '{{ urlfor "Teacher/TeacherController.DataGrid"}}',
+            url: '{{ urlfor "teacher/TeacherController.DataGrid"}}',
             method: 'post',
             sidePagination: 'server', //服务器端用 server
             idField: 'Id',
@@ -225,7 +225,7 @@
         if (Id > 0) {
             title = "编辑教师"
         }
-        var url = '{{ urlfor "Teacher/TeacherController.Edit"}}' + '/' + Id;
+        var url = '{{ urlfor "teacher/TeacherController.Edit"}}' + '/' + Id;
         layer.open({
             type: 2,
             title: title,
@@ -245,7 +245,7 @@
 
     function AddSubject(Id) {
         var title = '编辑科目';
-        var url = '{{ urlfor "Teacher/TeacherSubjectController.Edit" }}' + '/' + Id
+        var url = '{{ urlfor "teacher/TeacherSubjectController.Edit" }}' + '/' + Id
         layer.open({
             type: 2,
             title: title,
@@ -264,7 +264,7 @@
     }
 
     function DeleteFun() {
-        var url = '{{ urlfor "Teacher/TeacherController.Delete"}}';
+        var url = '{{ urlfor "teacher/TeacherController.Delete"}}';
         var rows = $dataGrid.bootstrapTable("getSelections");
         if (rows.length === 0) {
             layer.alert('请选择想要删除的项', { icon: 0, title: '提示' });
@@ -326,7 +326,7 @@
     }
     // 校区下拉框初始化
     function schoolSelectInit() {
-        var url = '{{urlfor "Student/SchoolController.DataList"}}';
+        var url = '{{urlfor "student/SchoolController.DataList"}}';
         var $select = $("#SchoolId");
         $select.html('');
         $.sdpost(url,{},function (re) {

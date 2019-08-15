@@ -82,10 +82,10 @@ func (c *ContractController) Edit() {
 		}
 	}
 	if m.Student == nil {
-		student := student.Student{}
-		school := student.School{}
-		student.School = &school
-		m.Student = &student
+		studentm := student.Student{}
+		schoolm := student.School{}
+		studentm.School = &schoolm
+		m.Student = &studentm
 	}
 	c.Data["m"] = m
 	c.Data["school_id"] = c.CurUser.SchoolId
@@ -103,9 +103,9 @@ func (c *ContractController) Save() {
 		c.JsonResult(enums.JRCodeFailed, "获取数据失败", m.Id)
 	}
 	studentId, _ := c.GetInt("StudentId", 0)
-	student := student.Student{Id: studentId}
-	orm.NewOrm().Read(&student)
-	m.Student = &student
+	studentm := student.Student{Id: studentId}
+	orm.NewOrm().Read(&studentm)
+	m.Student = &studentm
 
 	valid := validation.Validation{}
 	valid.Required(m.Student.Id, "学生")
@@ -118,9 +118,9 @@ func (c *ContractController) Save() {
 		c.JsonResult(enums.JRCodeFailed, valid.Errors[0].Key+valid.Errors[0].Message, "")
 	}
 	var price student.ContractPrice
-	sprice, err := price.Search(m.Type, student.Grade, m.Quantity)
+	sprice, err := price.Search(m.Type, studentm.Grade, m.Quantity)
 	if err == nil {
-		priceCol := "Grade" + strconv.Itoa(student.Grade)
+		priceCol := "Grade" + strconv.Itoa(studentm.Grade)
 		immutable := reflect.ValueOf(sprice)
 		val := immutable.FieldByName(priceCol).Int()
 		m.Price = int(val)
@@ -139,16 +139,16 @@ func (c *ContractController) Save() {
 			_, conErr = o.Insert(&m)
 			switch m.Type {
 			case student.ContractTypeYi:
-				student.Balance1 = student.Balance1 + m.Amount
-				student.Balance1Length = student.Balance1Length + m.Quantity
+				studentm.Balance1 = studentm.Balance1 + m.Amount
+				studentm.Balance1Length = studentm.Balance1Length + m.Quantity
 			case student.ContractTypeXiao:
-				student.Balance2 = student.Balance1 - m.Amount
-				student.Balance2Length = student.Balance1Length + m.Quantity
+				studentm.Balance2 = studentm.Balance1 - m.Amount
+				studentm.Balance2Length = studentm.Balance1Length + m.Quantity
 			case student.ContractTypeTuo:
-				student.Balance3 = student.Balance1 - m.Amount
-				student.Balance3Length = student.Balance1Length + m.Quantity
+				studentm.Balance3 = studentm.Balance1 - m.Amount
+				studentm.Balance3Length = studentm.Balance1Length + m.Quantity
 			}
-			_, stuErr = o.Update(&student)
+			_, stuErr = o.Update(&studentm)
 		case 1:
 			_, conErr = o.Insert(&m)
 		case 2:
@@ -175,16 +175,16 @@ func (c *ContractController) Save() {
 			_, conErr = o.Update(&m, "status")
 			switch m.Type {
 			case student.ContractTypeYi:
-				student.Balance1 = student.Balance1 - m.Amount
-				student.Balance1Length = student.Balance1Length - m.Quantity
+				studentm.Balance1 = studentm.Balance1 - m.Amount
+				studentm.Balance1Length = studentm.Balance1Length - m.Quantity
 			case student.ContractTypeXiao:
-				student.Balance2 = student.Balance1 - m.Amount
-				student.Balance2Length = student.Balance1Length - m.Quantity
+				studentm.Balance2 = studentm.Balance2 - m.Amount
+				studentm.Balance2Length = studentm.Balance2Length - m.Quantity
 			case student.ContractTypeTuo:
-				student.Balance3 = student.Balance1 - m.Amount
-				student.Balance3Length = student.Balance1Length - m.Quantity
+				studentm.Balance3 = studentm.Balance3 - m.Amount
+				studentm.Balance3Length = studentm.Balance3Length - m.Quantity
 			}
-			_, stuErr = o.Update(&student)
+			_, stuErr = o.Update(&studentm)
 		} else {
 			_, conErr = o.Update(&m, "status")
 		}
@@ -396,10 +396,10 @@ func (c *ContractController) Print() {
 	id, _ := c.GetInt(":id")
 	m := student.Contract{Id: id}
 	orm.NewOrm().Read(&m)
-	student := student.Student{Id: m.Student.Id}
-	orm.NewOrm().Read(&student)
+	studentm := student.Student{Id: m.Student.Id}
+	orm.NewOrm().Read(&studentm)
 	c.Data["m"] = m
-	c.Data["student"] = student
+	c.Data["student"] = studentm
 	c.Data["chin"] = utils.Num2Chinese(int(m.Amount))
 	c.Data["school_id"] = c.CurUser.SchoolId
 	if m.Type == student.ContractTypeYi {

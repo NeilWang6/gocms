@@ -46,9 +46,9 @@ func (c *ScheduleController) Index() {
 	c.LayoutSections["footerjs"] = "schedule/index_footerjs.html"
 
 	obj := make([]*class.Schedule, 0)
-	student := make([]*student.Student, 0)
-	teacher := make([]*teacher.Teacher, 0)
-	subject := make([]*teacher.Subject, 0)
+	studentm := make([]*student.Student, 0)
+	teacherm := make([]*teacher.Teacher, 0)
+	subjectm := make([]*teacher.Subject, 0)
 	queryobj := orm.NewOrm().QueryTable(models.ScheduleTBName()).Filter("status", class.ScheduleStatusValid)
 	queryostu := orm.NewOrm().QueryTable(models.StudentTBName()).Filter("status", student.StudentStatusValid)
 	queryotch := orm.NewOrm().QueryTable(models.TeacherTBName()).Filter("status", teacher.TeacherStatusValid)
@@ -64,19 +64,19 @@ func (c *ScheduleController) Index() {
 		}
 	}
 	queryobj.All(&obj)
-	queryostu.All(&student, "id", "name")
-	queryotch.All(&teacher, "id", "name")
-	orm.NewOrm().QueryTable(models.SubjectTBName()).All(&subject, "id", "name")
+	queryostu.All(&studentm, "id", "name")
+	queryotch.All(&teacherm, "id", "name")
+	orm.NewOrm().QueryTable(models.SubjectTBName()).All(&subjectm, "id", "name")
 	studentMap1 := make(map[int]string)
 	teacherMap := make(map[int]string)
 	subjectMap := make(map[int]string)
-	for _, val := range student {
+	for _, val := range studentm {
 		studentMap1[val.Id] = val.Name
 	}
-	for _, val := range teacher {
+	for _, val := range teacherm {
 		teacherMap[val.Id] = val.Name
 	}
-	for _, val := range subject {
+	for _, val := range subjectm {
 		subjectMap[val.Id] = val.Name
 	}
 	var final []class.ScheduleWithName

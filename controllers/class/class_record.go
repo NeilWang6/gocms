@@ -155,12 +155,12 @@ func (c *ClassRecordController) Confirm() {
 	if err != nil {
 		c.JsonResult(enums.JRCodeFailed, err.Error(), "")
 	}
-	student := student.Student{Id: m.Student.Id}
-	err = orm.NewOrm().Read(&student)
+	studentm := student.Student{Id: m.Student.Id}
+	err = orm.NewOrm().Read(&studentm)
 	if err != nil {
 		c.JsonResult(enums.JRCodeFailed, err.Error(), "")
 	}
-	teacherPrice, err := teacher.TeacherPrice(m.Teacher.Id, student.Grade, m.Type)
+	teacherPrice, err := teacher.TeacherPrice(m.Teacher.Id, studentm.Grade, m.Type)
 	if err != nil {
 		c.JsonResult(enums.JRCodeFailed, err.Error(), "")
 	}
@@ -194,32 +194,32 @@ func (c *ClassRecordController) Confirm() {
 	stuPriceStr, _ := json.Marshal(stuPrice)
 	m.Status = class.ClassRecordStatusConfirm
 	m.Price = teacherPrice
-	m.Grade = student.Grade
+	m.Grade = studentm.Grade
 	m.Amount = float64(teacherPrice) * m.Length
 	m.StudentAmount = stuAmount
 	m.StudentPrice = string(stuPriceStr)
 	m.ContractId = string(contractIdStr)
 	switch m.Type { // 扣学生余额, 余额及状态更改
 	case student.ContractTypeYi:
-		m.StudentSurplus = student.Balance1 - stuAmount
-		m.StudentQuantitySurplus = student.Balance1Length - m.Length
-		student.Balance1 = student.Balance1 - stuAmount
-		student.Balance1Length = student.Balance1Length - m.Length
+		m.StudentSurplus = studentm.Balance1 - stuAmount
+		m.StudentQuantitySurplus = studentm.Balance1Length - m.Length
+		studentm.Balance1 = studentm.Balance1 - stuAmount
+		studentm.Balance1Length = studentm.Balance1Length - m.Length
 		_, classErr = o.Update(&m)
-		_, stuErr = o.Update(&student, "balance1_length", "balance1")
+		_, stuErr = o.Update(&studentm, "balance1_length", "balance1")
 	case student.ContractTypeXiao:
-		m.StudentSurplus = student.Balance2 - stuAmount
-		m.StudentQuantitySurplus = student.Balance2Length - m.Length
-		student.Balance2 = student.Balance2 - stuAmount
-		student.Balance2Length = student.Balance2Length - m.Length
-		_, stuErr = o.Update(&student, "balance2_length", "balance2")
+		m.StudentSurplus = studentm.Balance2 - stuAmount
+		m.StudentQuantitySurplus = studentm.Balance2Length - m.Length
+		studentm.Balance2 = studentm.Balance2 - stuAmount
+		studentm.Balance2Length = studentm.Balance2Length - m.Length
+		_, stuErr = o.Update(&studentm, "balance2_length", "balance2")
 		_, classErr = o.Update(&m)
 	case student.ContractTypeTuo:
-		m.StudentSurplus = student.Balance3 - stuAmount
-		m.StudentQuantitySurplus = student.Balance3Length - m.Length
-		student.Balance3 = student.Balance3 - stuAmount
-		student.Balance3Length = student.Balance3Length - m.Length
-		_, stuErr = o.Update(&student, "balance3_length", "balance3")
+		m.StudentSurplus = studentm.Balance3 - stuAmount
+		m.StudentQuantitySurplus = studentm.Balance3Length - m.Length
+		studentm.Balance3 = studentm.Balance3 - stuAmount
+		studentm.Balance3Length = studentm.Balance3Length - m.Length
+		_, stuErr = o.Update(&studentm, "balance3_length", "balance3")
 		_, classErr = o.Update(&m)
 	default:
 		stuErr = errors.New("找不到该学生")
@@ -264,10 +264,10 @@ func (c *ClassRecordController) SingleAdd() {
 	teacherId, _ := c.GetInt("TeacherId")
 	studentId, _ := c.GetInt("StudentId")
 	subjectId, _ := c.GetInt("SubjectId")
-	teacher := teacher.Teacher{Id: teacherId}
+	teacherm := teacher.Teacher{Id: teacherId}
 	student := student.Student{Id: studentId}
 	subject := teacher.Subject{Id: subjectId}
-	m.Teacher = &teacher
+	m.Teacher = &teacherm
 	m.Student = &student
 	m.Subject = &subject
 	valid := validation.Validation{}

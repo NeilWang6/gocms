@@ -27,7 +27,7 @@
             },
             messages: {},
             submitHandler: function (form) {
-				var url ='{{ urlfor "FrontedManage/BannerController.Edit"}}';
+				var url ='{{ urlfor "fronted_manage/BannerController.Edit"}}';
 				var data = $thisForm.serialize();
 				$.sdpost(url,data,function(re){
 					if(re.code === 0){

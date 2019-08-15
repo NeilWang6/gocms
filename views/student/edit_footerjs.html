@@ -23,7 +23,7 @@
     }
     // 校区下拉框初始化
     function schoolSelectInit(selecteds) {
-        var url = '{{urlfor "Student/SchoolController.DataList"}}';
+        var url = '{{urlfor "student/SchoolController.DataList"}}';
         var $select = $("#School");
         $select.html('');
         $.sdpost(url,{},function (re) {
@@ -61,7 +61,7 @@
     }
     // 学生学校下拉框初始化
     function studentSchoolSelectInit(selecteds) {
-        var url = '{{urlfor "Student/StudentSchoolController.DataList"}}';
+        var url = '{{urlfor "student/StudentSchoolController.DataList"}}';
         var $select = $("#StudentSchoolId");
         $select.html('');
         $.sdpost(url,{},function (re) {

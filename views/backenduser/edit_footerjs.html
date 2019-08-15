@@ -101,7 +101,7 @@
     }
     // 校区下拉框初始化
     function schoolSelectInit(selecteds) {
-        var url = '{{urlfor "Student/SchoolController.DataList"}}';
+        var url = '{{urlfor "student/SchoolController.DataList"}}';
         var $select = $("#School");
         $select.html('');
         $.sdpost(url,{},function (re) {

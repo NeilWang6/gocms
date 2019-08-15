@@ -34,7 +34,7 @@
             },
             messages: {},
             submitHandler: function (form) {
-				var url ='{{ urlfor "FrontedManage/StaffController.Edit"}}';
+				var url ='{{ urlfor "fronted_manage/StaffController.Edit"}}';
 				//var data = $thisForm.serialize();
                 var content = CKEDITOR.instances.editor1.getData();
                 var name = $("#Name").val();
@@ -124,7 +124,7 @@
         //$(".textarea").wysihtml5();
     });
     function subjectSelectInit(selecteds) {
-        var url = '{{urlfor "Teacher/SubjectController.DataList"}}';
+        var url = '{{urlfor "teacher/SubjectController.DataList"}}';
         var $select = $("#Subject");
         $select.html('');
         $.sdpost(url,{},function (re) {
@@ -143,7 +143,7 @@
     }
     // 校区下拉框初始化
     function schoolSelectInit(selecteds) {
-        var url = '{{urlfor "Student/SchoolController.DataList"}}';
+        var url = '{{urlfor "student/SchoolController.DataList"}}';
         var $select = $("#School");
         $select.html('');
         $.sdpost(url,{},function (re) {
