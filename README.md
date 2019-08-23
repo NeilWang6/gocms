@@ -43,7 +43,7 @@ go get github.com/cuua/gocms
 ```
 bee run
 ```
-在浏览器里打开 http://localhost:8080 进行访问
+在浏览器里打开 http://localhost:8080/home 进行访问
 
 # 系统截图
 
