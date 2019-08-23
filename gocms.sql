@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2019-08-23 16:03:39
+Date: 2019-08-23 16:24:49
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -39,7 +39,7 @@ CREATE TABLE `gms_backend_user` (
 INSERT INTO `gms_backend_user` VALUES ('1', 'cuua', 'admin', 'e10adc3949ba59abbe56e057f20f883e', '1', '1', '10000', '7590547807@qq.com', '/static/upload/200.png', '10');
 INSERT INTO `gms_backend_user` VALUES ('3', '张三', 'zhang3', 'e10adc3949ba59abbe56e057f20f883e', '0', '1', '', '', '', '11');
 INSERT INTO `gms_backend_user` VALUES ('5', '李四', 'lisi', 'e10adc3949ba59abbe56e057f20f883e', '0', '1', '', '', '', '10');
-INSERT INTO `gms_backend_user` VALUES ('6', '崔新', '开鲁路', 'c8837b23ff8aaa8a2dde915473ce0991', '0', '1', '13333333333', 'cx2018@qq.com', '', '12');
+INSERT INTO `gms_backend_user` VALUES ('6', 'lu', 'kailu', 'c8837b23ff8aaa8a2dde915473ce0991', '0', '1', '13333333333', 'lu@qq.com', '', '12');
 INSERT INTO `gms_backend_user` VALUES ('7', 'huni', 'huni', 'e10adc3949ba59abbe56e057f20f883e', '0', '1', '', '', '', '10');
 
 -- ----------------------------
