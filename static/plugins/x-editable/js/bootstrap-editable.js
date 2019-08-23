@@ -2548,7 +2548,7 @@ To create your own input you can inherit from this class.
 /**
 List - abstract class for inputs that have source option loaded from js array or via ajax
 
-@class list
+@class index.html
 @extends abstractinput
 **/
 (function ($) {
@@ -3147,7 +3147,7 @@ $(function(){
 Select (dropdown)
 
 @class select
-@extends list
+@extends index.html
 @final
 @example
 <a href="#" id="status" data-type="select" data-pk="1" data-url="/post" data-title="Select status"></a>
@@ -3171,7 +3171,7 @@ $(function(){
         this.init('select', options, Select.defaults);
     };
 
-    $.fn.editableutils.inherit(Select, $.fn.editabletypes.list);
+    $.fn.editableutils.inherit(Select, $.fn.editabletypes.index);
 
     $.extend(Select.prototype, {
         renderList: function() {
@@ -3231,7 +3231,7 @@ $(function(){
         }
     });      
 
-    Select.defaults = $.extend({}, $.fn.editabletypes.list.defaults, {
+    Select.defaults = $.extend({}, $.fn.editabletypes.index.defaults, {
         /**
         @property tpl 
         @default <select></select>
@@ -3248,7 +3248,7 @@ List of checkboxes.
 Internally value stored as javascript array of values.
 
 @class checklist
-@extends list
+@extends index.html
 @final
 @example
 <a href="#" id="options" data-type="checklist" data-pk="1" data-url="/post" data-title="Select options"></a>
@@ -3272,7 +3272,7 @@ $(function(){
         this.init('checklist', options, Checklist.defaults);
     };
 
-    $.fn.editableutils.inherit(Checklist, $.fn.editabletypes.list);
+    $.fn.editableutils.inherit(Checklist, $.fn.editabletypes.index);
 
     $.extend(Checklist.prototype, {
         renderList: function() {
@@ -3374,7 +3374,7 @@ $(function(){
        }
     });      
 
-    Checklist.defaults = $.extend({}, $.fn.editabletypes.list.defaults, {
+    Checklist.defaults = $.extend({}, $.fn.editabletypes.index.defaults, {
         /**
         @property tpl 
         @default <div></div>

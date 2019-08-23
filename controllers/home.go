@@ -70,15 +70,10 @@ func (c *HomeController) Error() {
 	c.SetTpl("home/error.html", "shared/layout_pullbox.html")
 }
 func (c *HomeController) Login() {
-	c.Data["cont"] = c.ControllerName
 	c.LayoutSections = make(map[string]string)
 	c.LayoutSections["headcssjs"] = "home/login_headcssjs.html"
-	c.SetTpl("home/login.html", "main/layout_page.html")
-
-	//c.LayoutSections = make(map[string]string)
-	//c.LayoutSections["headcssjs"] = "home/login_headcssjs.html"
-	//c.LayoutSections["footerjs"] = "home/login_footerjs.html"
-	//c.SetTpl("home/login.html", "shared/layout_base.html")
+	c.LayoutSections["footerjs"] = "home/login_footerjs.html"
+	c.SetTpl("home/login.html", "shared/layout_base.html")
 }
 func (c *HomeController) DoLogin() {
 	username := strings.TrimSpace(c.GetString("UserName"))

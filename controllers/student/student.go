@@ -27,7 +27,7 @@ func (c *StudentController) Prepare() {
 }
 
 // 学生信息列表
-func (c *StudentController) List() {
+func (c *StudentController) Index() {
 	c.Data["showMoreQuery"] = false
 	//将页面左边菜单的某项激活
 	c.Data["activeSidebarUrl"] = c.URLFor(c.ControllerName + "." + c.ActionName)
@@ -179,7 +179,7 @@ func (c *StudentController) Save() {
 		// 生成学生编号锁
 		StudentCodeValid()
 		//创建时间，编号创建
-		m.CreatedAt = time.Now().Format(utils.FormatDateTime)
+		m.CreatedAt = time.Now()
 		m.Code = GenCode(lastS.Code)
 		if m.Type == student.TeamType { // 班组添加
 			groupIds := make([]string, 0)
@@ -195,7 +195,7 @@ func (c *StudentController) Save() {
 			c.JsonResult(enums.JRCodeFailed, "添加失败", m.Id)
 		}
 	} else {
-		m.UpdatedAt = time.Now().Format(utils.FormatDateTime)
+		m.UpdatedAt = time.Now()
 		if m.Type == student.StudentType {
 			_, err = o.Update(&m, "name", "sex", "guarder", "relate", "grade", "contact1", "school_id", "student_school_id", "adress", "note", "status", "updated_at")
 		} else { // 班组更新

@@ -25,7 +25,6 @@ func init() {
 type Contract struct {
 	Id              int       `json:"id"`
 	Student         *Student  `orm:"rel(one)"`
-	Name            string    `json:"name"`
 	Type            int       `json:"type"`
 	Price           int       `json:"price"`
 	Quantity        float64   `json:"quantity"`
@@ -34,7 +33,7 @@ type Contract struct {
 	Surplus         float64   `json:"surplus"`
 	Payment         string    `json:"payment"`
 	CreatedAt       time.Time `json:"created_at"`
-	UpdateAt        string    `json:"update_at"`
+	UpdateAt        time.Time `json:"update_at"`
 	Status          int       `json:"status"`
 	EndAt           string
 }

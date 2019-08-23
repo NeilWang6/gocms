@@ -7,6 +7,7 @@
 <!-- bootstrap-table启用x-editable插件 -->
 <script src="/static/plugins/bootstrap-table/bootstrap-table-editable.js"></script>
 <script src="/static/product/scripts/common.js"></script>
+<script src="/static/product/scripts/date.js"></script>
 
 <script>
     var $dataGrid = $('#dataGrid');
@@ -120,6 +121,11 @@
                 field: 'created_at',
                 title: '建档时间',
                 align: 'center',
+                sortable: true,
+                formatter: function (value,row) {
+                    var d = new Date(row.created_at);
+                    return formatDate(d)
+                }
             },{
                 field: 'name',
                 title: '姓名',

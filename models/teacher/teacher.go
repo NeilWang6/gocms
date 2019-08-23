@@ -6,6 +6,7 @@ import (
 	"gocms/models/student"
 	"reflect"
 	"strconv"
+	"time"
 )
 
 const TeacherStatusValid = 0
@@ -32,8 +33,8 @@ type Teacher struct {
 	ContractExpirationTime string          `json:"contract_expiration_time"`
 	Reward                 string          `json:"reward"`
 	Address                string          `json:"address"`
-	CreatedAt              string          `json:"created_at"`
-	Note                   string          `json:"note"`
+	CreatedAt              time.Time       `json:"created_at"`
+	Note                   time.Time       `json:"note"`
 	UpdatedAt              string          `json:"updated_at"`
 	Status                 int             `json:"status"`
 	Price1                 int             `json:"price1"`

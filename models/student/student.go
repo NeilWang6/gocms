@@ -5,6 +5,7 @@ import (
 	"gocms/models"
 	"strconv"
 	"strings"
+	"time"
 )
 
 func init() {
@@ -36,8 +37,8 @@ type Student struct {
 	StudentSchool  *StudentSchool `orm:"rel(one)"`
 	Adress         string         `json:"adress"`
 	Note           string         `json:"note"`
-	CreatedAt      string         `json:"created_at"`
-	UpdatedAt      string         `json:"updated_at"`
+	CreatedAt      time.Time      `json:"created_at"`
+	UpdatedAt      time.Time      `json:"updated_at"`
 	Status         int            `json:"status"`
 	GroupId        string         `json:"group_id"`
 	GroupName      string         `json:"group_name"`
@@ -47,7 +48,6 @@ type Student struct {
 	Balance2Length float64        `json:"balance2_length"`
 	Balance3       float64        `json:"balance3"`
 	Balance3Length float64        `json:"balance3_length"`
-	BindWechat     string         `json:"bind_wechat"`
 }
 
 func (m *Student) TableName() string {

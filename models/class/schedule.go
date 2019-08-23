@@ -17,7 +17,6 @@ type Schedule struct {
 	SubjectId      int     `json:"subject_id"`
 	TeacherId      int     `json:"teacher_id"`
 	SchoolId       int     `json:"school_id"`
-	MondayDate     string  `json:"monday_date"`
 	Class10        int     `json:"class10"`
 	Class20        int     `json:"class20"`
 	Class30        int     `json:"class30"`

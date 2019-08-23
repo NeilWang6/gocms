@@ -12,7 +12,7 @@ import (
 
 func init() {
 	/*student start*/
-	beego.Router("/student/student/list", &student.StudentController{}, "*:List")
+	beego.Router("/student/student/index", &student.StudentController{}, "*:Index")
 	beego.Router("/student/student/datagrid", &student.StudentController{}, "Get,Post:DataGrid")
 	beego.Router("/student/student/edit/?:id", &student.StudentController{}, "Get,Post:Edit")
 	beego.Router("/student/student/delete", &student.StudentController{}, "Get,Post:Delete")

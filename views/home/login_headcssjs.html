@@ -1,88 +1,14 @@
-<link rel="stylesheet" href="/static/plugins/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="/static/lte/css/AdminLTE.min.css">
-<link rel=stylesheet href=/static/fronted/css/owl.carousel.min.css>
-<link rel=stylesheet href=/static/fronted/css/animate.css>
-<link rel=stylesheet href=/static/fronted/css/iconfont.css>
-<link rel=stylesheet href=/static/fronted/css/main.css>
-
 <script>
   //判断当前页面是否在iframe里打开的
   if (parent && parent != window) {
     parent.window.location.href = window.location.href;
   }
-  //表单验证及AJAX提交
-  function validateInfo() {
-      var UserName = $.trim($('#thisForm input[name="UserName"]').val());
-      var UserPwd = $.trim($('#thisForm input[name="UserPwd"]').val());
-      if (UserName == "") {
-          $("#UserName-error").css("display","block");
-          return
-      }
-      if (UserPwd == "") {
-          $("#UserPwd-error").css("display","block");
-          return
-      }
-      var url = '{{ urlfor "HomeController.DoLogin"}}';
-      var homeUrl = '{{ urlfor "HomeController.Index"}}';
-      var data = {"UserName":UserName,"UserPwd":UserPwd};
-      $.ajax({
-          type:'post',
-          url:url,
-          dataType:'json',
-          data:data,
-          success:function(data) {
-              if (data.code === 0) {
-                  var redirectUri = GetUrlParam("url");
-                  if(redirectUri == "") {
-                      window.location.href=homeUrl;
-                  }else {
-                      window.location.href=redirectUri;
-                  }
-              } else {
-                  $("#Login-error").text(data.msg);
-                  $("#Login-error").css("display","block");
-              }
-          }
-      });
-  }
-  function GetUrlParam(paraName) {
-      var url = document.location.toString();
-      var arrObj = url.split("?");
-      if (arrObj.length > 1) {
-          var arrPara = arrObj[1].split("&");
-          var arr;
-
-          for (var i = 0; i < arrPara.length; i++) {
-              arr = arrPara[i].split("=");
-
-              if (arr != null && arr[0] == paraName) {
-                  return arr[1];
-              }
-          }
-          return "";
-      }
-      else {
-          return "";
-      }
-  }
-
 </script>
 
 <!-- iCheck -->
-{{/*/<link rel="stylesheet" href="/static/plugins/icheck/skins/square/blue.css">*/}}
+<link rel="stylesheet" href="/static/plugins/icheck/skins/square/blue.css">
 <style>
-    body {
-      background: url("/static/fronted/image/recruit-bg.jpg");
-    }
-    .nav>li>a {
-        padding: 0;
-        color: inherit;
-    }
-    .nav>li>a:hover{
-        color: #fff;background: none;
-    }
-    #footer {
-        position: fixed;
-        bottom: 0;
-    }
+  body {
+    background: url("/static/sdtheme/img/login_bg.jpg")
+  }
 </style>
