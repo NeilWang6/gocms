@@ -1,8 +1,8 @@
 package main
 
 import (
-	_ "gocms/routers"
-	_ "gocms/sysinit"
+	_ "github.com/cuua/gocms/routers"
+	_ "github.com/cuua/gocms/sysinit"
 
 	"github.com/astaxie/beego"
 )

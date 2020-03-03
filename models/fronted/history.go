@@ -2,7 +2,7 @@ package fronted
 
 import (
 	"github.com/astaxie/beego/orm"
-	"gocms/models"
+	"github.com/cuua/gocms/models"
 	"time"
 )
 

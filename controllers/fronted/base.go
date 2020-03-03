@@ -3,8 +3,8 @@ package fronted
 import (
 	"fmt"
 	"github.com/astaxie/beego"
-	"gocms/enums"
-	"gocms/models"
+	"github.com/cuua/gocms/enums"
+	"github.com/cuua/gocms/models"
 	"strings"
 )
 

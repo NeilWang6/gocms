@@ -2,7 +2,7 @@ package class
 
 import (
 	"github.com/astaxie/beego/orm"
-	"gocms/models"
+	"github.com/cuua/gocms/models"
 )
 
 const ScheduleStatusValid = 0

@@ -2,8 +2,8 @@ package teacher
 
 import (
 	"github.com/astaxie/beego/orm"
-	"gocms/models"
-	"gocms/models/student"
+	"github.com/cuua/gocms/models"
+	"github.com/cuua/gocms/models/student"
 	"reflect"
 	"strconv"
 	"time"

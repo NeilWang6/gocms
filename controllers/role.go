@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/astaxie/beego/orm"
-	"gocms/enums"
-	"gocms/models"
+	"github.com/cuua/gocms/enums"
+	"github.com/cuua/gocms/models"
 	"strconv"
 	"strings"
 )

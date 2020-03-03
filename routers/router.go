@@ -2,12 +2,12 @@ package routers
 
 import (
 	"github.com/astaxie/beego"
-	"gocms/controllers"
-	"gocms/controllers/class"
-	"gocms/controllers/fronted"
-	"gocms/controllers/fronted_manage"
-	"gocms/controllers/student"
-	"gocms/controllers/teacher"
+	"github.com/cuua/gocms/controllers"
+	"github.com/cuua/gocms/controllers/class"
+	"github.com/cuua/gocms/controllers/fronted"
+	"github.com/cuua/gocms/controllers/fronted_manage"
+	"github.com/cuua/gocms/controllers/student"
+	"github.com/cuua/gocms/controllers/teacher"
 )
 
 func init() {

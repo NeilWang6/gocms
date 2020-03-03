@@ -3,7 +3,7 @@ package student
 import (
 	"errors"
 	"github.com/astaxie/beego/orm"
-	"gocms/models"
+	"github.com/cuua/gocms/models"
 	"strconv"
 	"time"
 )

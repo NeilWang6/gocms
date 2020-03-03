@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"strings"
 
-	"gocms/enums"
-	"gocms/models"
-	"gocms/utils"
+	"github.com/cuua/gocms/enums"
+	"github.com/cuua/gocms/models"
+	"github.com/cuua/gocms/utils"
 
 	"github.com/astaxie/beego"
 )

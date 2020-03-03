@@ -1,7 +1,7 @@
 package sysinit
 
 import (
-	_ "gocms/models"
+	_ "github.com/cuua/gocms/models"
 
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"

@@ -3,10 +3,10 @@ package teacher
 import (
 	"encoding/json"
 	"github.com/astaxie/beego/orm"
-	"gocms/controllers"
-	"gocms/enums"
-	"gocms/models"
-	"gocms/models/teacher"
+	"github.com/cuua/gocms/controllers"
+	"github.com/cuua/gocms/enums"
+	"github.com/cuua/gocms/models"
+	"github.com/cuua/gocms/models/teacher"
 )
 
 type TeacherSubjectController struct {

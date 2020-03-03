@@ -2,8 +2,8 @@ package fronted
 
 import (
 	"github.com/astaxie/beego/orm"
-	"gocms/models"
-	"gocms/models/fronted"
+	"github.com/cuua/gocms/models"
+	"github.com/cuua/gocms/models/fronted"
 )
 
 type RecruitController struct {

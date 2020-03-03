@@ -1,7 +1,7 @@
 package models
 
 import (
-	"gocms/enums"
+	"github.com/cuua/gocms/enums"
 )
 
 // JsonResult 用于返回ajax请求的基类

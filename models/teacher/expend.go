@@ -2,8 +2,8 @@ package teacher
 
 import (
 	"github.com/astaxie/beego/orm"
-	"gocms/models"
-	"gocms/utils"
+	"github.com/cuua/gocms/models"
+	"github.com/cuua/gocms/utils"
 	"time"
 )
 

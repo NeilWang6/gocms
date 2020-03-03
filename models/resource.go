@@ -3,7 +3,7 @@ package models
 import (
 	"fmt"
 
-	"gocms/utils"
+	"github.com/cuua/gocms/utils"
 
 	"github.com/astaxie/beego/orm"
 )
