@@ -47,7 +47,7 @@ export goproxy=https://goproxy.cn
 
 再次go build
 
-bee run
+go run main.go
 ```
 在浏览器里打开 http://localhost:8080/home 进行访问
 
