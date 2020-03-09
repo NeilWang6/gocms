@@ -41,6 +41,10 @@ go get github.com/cuua/gocms
 5. 运行
 在 gocms 目录使用beego官方提供的命令运行
 ```
+go build
+//如果下载失败可以尝试启用代理 
+export goproxy=https://goproxy.cn
+
 bee run
 ```
 在浏览器里打开 http://localhost:8080/home 进行访问
