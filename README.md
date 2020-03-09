@@ -45,6 +45,8 @@ go build
 //如果下载失败可以尝试启用代理 
 export goproxy=https://goproxy.cn
 
+再次go build
+
 bee run
 ```
 在浏览器里打开 http://localhost:8080/home 进行访问
