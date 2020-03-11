@@ -3,6 +3,7 @@ package controllers
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/cuua/gocms/services"
 	"strconv"
 	"strings"
 
@@ -43,9 +44,9 @@ func (c *BackendUserController) Index() {
 func (c *BackendUserController) DataGrid() {
 	//直接反序化获取json格式的requestbody里的值（要求配置文件里 copyrequestbody=true）
 	var params models.BackendUserQueryParam
-	json.Unmarshal(c.Ctx.Input.RequestBody, &params)
+	_ = json.Unmarshal(c.Ctx.Input.RequestBody, &params)
 	//获取数据列表和总数
-	data, total := models.BackendUserPageList(&params)
+	data, total := services.BackendUserService.BackendUserPageList(&params)
 	//定义返回的数据结构
 	result := make(map[string]interface{})
 	result["total"] = total
@@ -64,12 +65,12 @@ func (c *BackendUserController) Edit() {
 	m := &models.BackendUser{}
 	var err error
 	if Id > 0 {
-		m, err = models.BackendUserOne(Id)
+		m, err = services.BackendUserService.BackendUserOne(Id)
 		if err != nil {
 			c.PageError("数据无效，请刷新后重试")
 		}
 		o := orm.NewOrm()
-		o.LoadRelated(m, "RoleBackendUserRel")
+		_, _ = o.LoadRelated(m, "RoleBackendUserRel")
 	} else {
 		//添加用户时默认状态为启用
 		m.Status = enums.Enabled
@@ -104,7 +105,8 @@ func (c *BackendUserController) Save() {
 			c.JsonResult(enums.JRCodeFailed, "添加失败", m.Id)
 		}
 	} else {
-		if oM, err := models.BackendUserOne(m.Id); err != nil {
+
+		if oM, err := services.BackendUserService.BackendUserOne(m.Id); err != nil {
 			c.JsonResult(enums.JRCodeFailed, "数据无效，请刷新后重试", m.Id)
 		} else {
 			m.UserPwd = strings.TrimSpace(m.UserPwd)

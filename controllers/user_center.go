@@ -4,6 +4,7 @@ import (
 	"github.com/astaxie/beego/orm"
 	"github.com/cuua/gocms/enums"
 	"github.com/cuua/gocms/models"
+	"github.com/cuua/gocms/services"
 	"github.com/cuua/gocms/utils"
 	"strings"
 )
@@ -20,7 +21,7 @@ func (c *UserCenterController) Prepare() {
 }
 func (c *UserCenterController) Profile() {
 	Id := c.CurUser.Id
-	m, err := models.BackendUserOne(Id)
+	m, err := services.BackendUserService.BackendUserOne(Id)
 	if m == nil || err != nil {
 		c.PageError("数据无效，请刷新后重试")
 	}
@@ -34,7 +35,7 @@ func (c *UserCenterController) Profile() {
 }
 func (c *UserCenterController) BasicInfoSave() {
 	Id := c.CurUser.Id
-	oM, err := models.BackendUserOne(Id)
+	oM, err := services.BackendUserService.BackendUserOne(Id)
 	if oM == nil || err != nil {
 		c.JsonResult(enums.JRCodeFailed, "数据无效，请刷新后重试", "")
 	}
@@ -57,7 +58,7 @@ func (c *UserCenterController) BasicInfoSave() {
 }
 func (c *UserCenterController) PasswordSave() {
 	Id := c.CurUser.Id
-	oM, err := models.BackendUserOne(Id)
+	oM, err := services.BackendUserService.BackendUserOne(Id)
 	if oM == nil || err != nil {
 		c.PageError("数据无效，请刷新后重试")
 	}

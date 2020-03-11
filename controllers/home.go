@@ -4,6 +4,7 @@ import (
 	"github.com/astaxie/beego/orm"
 	"github.com/cuua/gocms/models/student"
 	"github.com/cuua/gocms/models/teacher"
+	"github.com/cuua/gocms/services"
 	"strings"
 	"time"
 
@@ -82,7 +83,7 @@ func (c *HomeController) DoLogin() {
 		c.JsonResult(enums.JRCodeFailed, "用户名和密码不正确", "")
 	}
 	userpwd = utils.String2md5(userpwd)
-	user, err := models.BackendUserOneByUserName(username, userpwd)
+	user, err := services.BackendUserService.BackendUserOneByUserName(username, userpwd)
 	//fmt.Println(username,userpwd,user,err)
 	if user != nil && err == nil {
 		if user.Status == enums.Disabled {

@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"fmt"
+	"github.com/cuua/gocms/services"
 	"strings"
 
 	"github.com/cuua/gocms/enums"
@@ -112,12 +113,12 @@ func (c *BaseController) adapterUserInfo() {
 
 //SetBackendUser2Session 获取用户信息（包括资源UrlFor）保存至Session
 func (c *BaseController) setBackendUser2Session(userId int) error {
-	m, err := models.BackendUserOne(userId)
+	m, err := services.BackendUserService.BackendUserOne(userId)
 	if err != nil {
 		return err
 	}
 	//获取这个用户能获取到的所有资源列表
-	resourceList := models.ResourceTreeGridByUserId(userId, 1000)
+	resourceList := services.ResourceService.ResourceTreeGridByUserId(userId, 1000)
 	for _, item := range resourceList {
 		m.ResourceUrlForList = append(m.ResourceUrlForList, strings.TrimSpace(item.UrlFor))
 	}

@@ -14,3 +14,11 @@ type RoleBackendUserRel struct {
 func (a *RoleBackendUserRel) TableName() string {
 	return RoleBackendUserRelTBName()
 }
+
+type RoleBackendUserRelQueryParam struct {
+	BaseQueryParam
+	ID            int
+	BackendUserID int
+	RoleID        int
+	IDIn          []int
+}

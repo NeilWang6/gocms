@@ -1,10 +1,6 @@
 package models
 
 import (
-	"fmt"
-
-	"github.com/cuua/gocms/utils"
-
 	"github.com/astaxie/beego/orm"
 )
 
@@ -80,35 +76,35 @@ func ResourceTreeGrid4Parent(id int) []*Resource {
 }
 
 // ResourceTreeGridByUserId 根据用户获取有权管理的资源列表，并整理成teegrid格式
-func ResourceTreeGridByUserId(backuserid, maxrtype int) []*Resource {
-	cachekey := fmt.Sprintf("rms_ResourceTreeGridByUserId_%v_%v", backuserid, maxrtype)
-	var list []*Resource
-	if err := utils.GetCache(cachekey, &list); err == nil {
-		return list
-	}
-	o := orm.NewOrm()
-	user, err := BackendUserOne(backuserid)
-	if err != nil || user == nil {
-		return list
-	}
-	var sql string
-	if user.IsSuper == true {
-		//如果是管理员，则查出所有的
-		sql = fmt.Sprintf(`SELECT id,name,parent_id,rtype,icon,seq,url_for FROM %s Where rtype <= ? Order By seq asc,Id asc`, ResourceTBName())
-		o.Raw(sql, maxrtype).QueryRows(&list)
-	} else {
-		//联查多张表，找出某用户有权管理的
-		sql = fmt.Sprintf(`SELECT DISTINCT T0.resource_id,T2.id,T2.name,T2.parent_id,T2.rtype,T2.icon,T2.seq,T2.url_for
-		FROM %s AS T0
-		INNER JOIN %s AS T1 ON T0.role_id = T1.role_id
-		INNER JOIN %s AS T2 ON T2.id = T0.resource_id
-		WHERE T1.backend_user_id = ? and T2.rtype <= ?  Order By T2.seq asc,T2.id asc`, RoleResourceRelTBName(), RoleBackendUserRelTBName(), ResourceTBName())
-		o.Raw(sql, backuserid, maxrtype).QueryRows(&list)
-	}
-	result := resourceList2TreeGrid(list)
-	utils.SetCache(cachekey, result, 30)
-	return result
-}
+//func ResourceTreeGridByUserId(backuserid, maxrtype int) []*Resource {
+//	cachekey := fmt.Sprintf("rms_ResourceTreeGridByUserId_%v_%v", backuserid, maxrtype)
+//	var list []*Resource
+//	if err := utils.GetCache(cachekey, &list); err == nil {
+//		return list
+//	}
+//	o := orm.NewOrm()
+//	user, err := services.BackendUserService.BackendUserOne(backuserid)
+//	if err != nil || user == nil {
+//		return list
+//	}
+//	var sql string
+//	if user.IsSuper == true {
+//		//如果是管理员，则查出所有的
+//		sql = fmt.Sprintf(`SELECT id,name,parent_id,rtype,icon,seq,url_for FROM %s Where rtype <= ? Order By seq asc,Id asc`, ResourceTBName())
+//		_,_ = o.Raw(sql, maxrtype).QueryRows(&list)
+//	} else {
+//		//联查多张表，找出某用户有权管理的
+//		sql = fmt.Sprintf(`SELECT DISTINCT T0.resource_id,T2.id,T2.name,T2.parent_id,T2.rtype,T2.icon,T2.seq,T2.url_for
+//		FROM %s AS T0
+//		INNER JOIN %s AS T1 ON T0.role_id = T1.role_id
+//		INNER JOIN %s AS T2 ON T2.id = T0.resource_id
+//		WHERE T1.backend_user_id = ? and T2.rtype <= ?  Order By T2.seq asc,T2.id asc`, RoleResourceRelTBName(), RoleBackendUserRelTBName(), ResourceTBName())
+//		_,_ = o.Raw(sql, backuserid, maxrtype).QueryRows(&list)
+//	}
+//	result := resourceList2TreeGrid(list)
+//	_ = utils.SetCache(cachekey, result, 30)
+//	return result
+//}
 
 // resourceList2TreeGrid 将资源列表转成treegrid格式
 func resourceList2TreeGrid(list []*Resource) []*Resource {

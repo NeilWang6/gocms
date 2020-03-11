@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"fmt"
+	"github.com/cuua/gocms/services"
 	"strconv"
 	"strings"
 
@@ -50,7 +51,7 @@ func (c *ResourceController) TreeGrid() {
 func (c *ResourceController) UserMenuTree() {
 	userid := c.CurUser.Id
 	//获取用户有权管理的菜单列表（包括区域）
-	tree := models.ResourceTreeGridByUserId(userid, 1)
+	tree := services.ResourceService.ResourceTreeGridByUserId(userid, 1)
 	//转换UrlFor 2 LinkUrl
 	c.UrlFor2Link(tree)
 	c.JsonResult(enums.JRCodeSucc, "", tree)
