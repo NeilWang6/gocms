@@ -161,7 +161,7 @@ func (c *RoleController) Allocate() {
 }
 func (c *RoleController) UpdateSeq() {
 	Id, _ := c.GetInt("pk", 0)
-	oM, err := models.RoleOne(Id)
+	oM, err := services.RoleService.RoleOne(Id)
 	if err != nil || oM == nil {
 		c.JsonResult(enums.JRCodeFailed, "选择的数据无效", 0)
 	}
