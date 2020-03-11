@@ -6,6 +6,7 @@ import (
 	"github.com/astaxie/beego/orm"
 	"github.com/cuua/gocms/enums"
 	"github.com/cuua/gocms/models"
+	"github.com/cuua/gocms/services"
 	"strconv"
 	"strings"
 )
@@ -46,9 +47,9 @@ func (c *RoleController) Index() {
 func (c *RoleController) DataGrid() {
 	//直接反序化获取json格式的requestbody里的值
 	var params models.RoleQueryParam
-	json.Unmarshal(c.Ctx.Input.RequestBody, &params)
+	_ = json.Unmarshal(c.Ctx.Input.RequestBody, &params)
 	//获取数据列表和总数
-	data, total := models.RolePageList(&params)
+	data, total := services.RoleService.RolePageList(&params)
 	//定义返回的数据结构
 	result := make(map[string]interface{})
 	result["total"] = total
@@ -61,7 +62,7 @@ func (c *RoleController) DataGrid() {
 func (c *RoleController) DataList() {
 	var params = models.RoleQueryParam{}
 	//获取数据列表和总数
-	data := models.RoleDataList(&params)
+	data := services.RoleService.RoleDataList(&params)
 	//定义返回的数据结构
 	c.JsonResult(enums.JRCodeSucc, "", data)
 }
@@ -121,7 +122,7 @@ func (c *RoleController) Delete() {
 			ids = append(ids, id)
 		}
 	}
-	if num, err := models.RoleBatchDelete(ids); err == nil {
+	if num, err := services.RoleService.RoleBatchDelete(ids); err == nil {
 		c.JsonResult(enums.JRCodeSucc, fmt.Sprintf("成功删除 %d 项", num), 0)
 	} else {
 		c.JsonResult(enums.JRCodeFailed, "删除失败", 0)
