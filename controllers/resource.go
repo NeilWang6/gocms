@@ -41,7 +41,7 @@ func (c *ResourceController) Index() {
 
 //TreeGrid 获取所有资源的列表
 func (c *ResourceController) TreeGrid() {
-	tree := models.ResourceTreeGrid()
+	tree := services.ResourceService.ResourceTreeGrid()
 	//转换UrlFor 2 LinkUrl
 	c.UrlFor2Link(tree)
 	c.JsonResult(enums.JRCodeSucc, "", tree)
@@ -60,7 +60,7 @@ func (c *ResourceController) UserMenuTree() {
 //ParentTreeGrid 获取可以成为某节点的父节点列表
 func (c *ResourceController) ParentTreeGrid() {
 	Id, _ := c.GetInt("id", 0)
-	tree := models.ResourceTreeGrid4Parent(Id)
+	tree := services.ResourceService.ResourceTreeGrid4Parent(Id)
 	//转换UrlFor 2 LinkUrl
 	c.UrlFor2Link(tree)
 	c.JsonResult(enums.JRCodeSucc, "", tree)
@@ -106,7 +106,7 @@ func (c *ResourceController) Edit() {
 	if Id == 0 {
 		m.Seq = 100
 	} else {
-		m, err = models.ResourceOne(Id)
+		m, err = services.ResourceService.ResourceOne(Id)
 		if err != nil {
 			c.PageError("数据无效，请刷新后重试")
 		}
@@ -117,7 +117,7 @@ func (c *ResourceController) Edit() {
 		c.Data["parent"] = 0
 	}
 	//获取可以成为当前节点的父节点的列表
-	c.Data["parents"] = models.ResourceTreeGrid4Parent(Id)
+	c.Data["parents"] = services.ResourceService.ResourceTreeGrid4Parent(Id)
 	//转换地址
 	m.LinkUrl = c.UrlFor2LinkOne(m.UrlFor)
 	c.Data["m"] = m
@@ -145,7 +145,7 @@ func (c *ResourceController) Save() {
 	}
 	//获取父节点
 	if parentId > 0 {
-		parent, err = models.ResourceOne(parentId)
+		parent, err = services.ResourceService.ResourceOne(parentId)
 		if err == nil && parent != nil {
 			m.Parent = parent
 		} else {
@@ -227,7 +227,7 @@ func (c *ResourceController) CheckUrlFor() {
 func (c *ResourceController) UpdateSeq() {
 
 	Id, _ := c.GetInt("pk", 0)
-	oM, err := models.ResourceOne(Id)
+	oM, err := services.ResourceService.ResourceOne(Id)
 	if err != nil || oM == nil {
 		c.JsonResult(enums.JRCodeFailed, "选择的数据无效", 0)
 	}

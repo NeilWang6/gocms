@@ -16,6 +16,55 @@ type resourceService struct {
 	mutex *sync.Mutex
 }
 
+// ResourceOne 获取单条
+func (s *resourceService) ResourceOne(id int) (*models.Resource, error) {
+	o := orm.NewOrm()
+	m := models.Resource{Id: id}
+	err := o.Read(&m)
+	if err != nil {
+		return nil, err
+	}
+	return &m, nil
+}
+
+// ResourceTreeGrid 获取treegrid顺序的列表
+func (s *resourceService) ResourceTreeGrid() []*models.Resource {
+	o := orm.NewOrm()
+	query := o.QueryTable(models.ResourceTBName()).OrderBy("seq", "id")
+	list := make([]*models.Resource, 0)
+	_, _ = query.All(&list)
+	return resourceList2TreeGrid(list)
+}
+
+// ResourceTreeGrid4Parent 获取可以成为某个节点父节点的列表
+func (s *resourceService) ResourceTreeGrid4Parent(id int) []*models.Resource {
+	tree := ResourceService.ResourceTreeGrid()
+	if id == 0 {
+		return tree
+	}
+	var index = -1
+	//找出当前节点所在索引
+	for i, _ := range tree {
+		if tree[i].Id == id {
+			index = i
+			break
+		}
+	}
+	if index == -1 {
+		return tree
+	} else {
+		tree[index].HtmlDisabled = 1
+		for _, item := range tree[index+1:] {
+			if item.Level > tree[index].Level {
+				item.HtmlDisabled = 1
+			} else {
+				break
+			}
+		}
+	}
+	return tree
+}
+
 func (s *resourceService) ResourceTreeGridByUserId(backuserid, maxrtype int) []*models.Resource {
 	cachekey := fmt.Sprintf("rms_ResourceTreeGridByUserId_%v_%v", backuserid, maxrtype)
 	var list []*models.Resource
