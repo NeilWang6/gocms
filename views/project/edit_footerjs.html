@@ -35,7 +35,7 @@
             },
             messages: {},
             submitHandler: function (form) {
-				var url ='{{ urlfor "fronted_manage/ProjectController.Edit"}}';
+				var url ='{{ urlfor "FrontedManage/ProjectController.Edit"}}';
 				//var data = $thisForm.serialize();
                 var content = CKEDITOR.instances.editor1.getData();
                 var name = $("#Name").val();
@@ -79,7 +79,7 @@
     }
     // 校区下拉框初始化
     function schoolSelectInit(selecteds) {
-        var url = '{{urlfor "student/SchoolController.DataList"}}';
+        var url = '{{urlfor "Student/SchoolController.DataList"}}';
         var $select = $("#School");
         $select.html('');
         $.sdpost(url,{},function (re) {
